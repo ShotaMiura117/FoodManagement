@@ -20,7 +20,7 @@
 			<li><a href="ManagementListpage.jsp">マネジメントリスト</a></li>
 			<li><a href="syohinsyosai.jsp">食品詳細</a></li>
 			<li><a href="syohinkinyupage.jsp">食品記入</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="ryourisyousaipage.jsp">料理詳細ページ</a></li>
 		</ul>
 		<h2 class="title">FoodManagementSystem</h2>
 		<div class="rightNav">
