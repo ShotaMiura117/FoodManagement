@@ -19,6 +19,10 @@
 					<i class="fa-solid fa-magnifying-glass" style="font-size: 14px;">検索</i>
 				</button>
 			</form>
+			 <div class="logout">
+            	<button class="b">
+            	<a href="login.jsp">ログアウト</a></button>
+            </div>
 		</div>
 		<div class="list">
 			<table>
