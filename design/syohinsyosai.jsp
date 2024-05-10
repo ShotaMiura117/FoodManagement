@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="syouhinsyousai.css">
 </head>
 <body>
-	<h1>商品詳細</h1>
+	<h1 class="top_title">商品詳細</h1>
 	<div class="but">
 		<button type="button">商品リストへ</button>
 	</div>
@@ -18,7 +18,6 @@
 		<div class="table">
 			<div class="tablehead">
 				<table>
-
 					<tr>
 						<th>商品名</th>
 						<td>ラメン</td>
@@ -55,6 +54,7 @@
 						<td><input type="date" class="date" name="date1"></td>
 					</tr>
 				</table>
+
 				<br>
 				<div class="button">
 					<button type="button" class="b">編集</button>
