@@ -8,6 +8,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>管理する食材リストページ</title>
 <link rel="stylesheet" href="ManagementListpage.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://kit.fontaweso me.com/8ff098a16e.js"crossorigin="anonymous"></script>
 </head>
 <body>
@@ -23,6 +24,10 @@
             	<button class="b">
             	<a href="login.jsp">ログアウト</a></button>
             </div>
+            <div class="hyoji">
+                <button type="button" class="btn btn-outline-primary" name="hyoji">選択した商品詳細を表示</button>
+                <button type="button" class="btn btn-outline-info" name="tsuika">食品を追加</button>
+            </div>
 		</div>
 		<div class="list">
 			<table>
@@ -32,7 +37,6 @@
 					<th>数量</th>
 					<th>賞味期限．消費期限</th>
 					<th>削除</th>
-					<th>編集</th>
 				</tr>
 				<tr>
 					<td>未</td>
@@ -41,7 +45,7 @@
 					<td>2024-05-02</td>
 					<td><input type="number" name="number" min="1" max="50">
 						<input type="checkbox"></td>
-					<td><input type="checkbox"></td>
+					 <td><button type="button" class="btn btn-outline-success" name="kakutei">確定</button></td>
 				</tr>
 				<tr>
 					<td>未</td>
@@ -50,7 +54,7 @@
 					<td>2024-05-02</td>
 					<td><input type="number" name="number" min="1" max="50">
 						<input type="checkbox"></td>
-					<td><input type="checkbox"></td>
+					 <td><button type="button" class="btn btn-outline-success" name="kakutei">確定</button></td>
 				</tr>
 				<tr>
 					<td>未</td>
@@ -59,7 +63,7 @@
 					<td>2024-05-02</td>
 					<td><input type="number" name="number" min="1" max="50">
 						<input type="checkbox"></td>
-					<td><input type="checkbox"></td>
+					 <td><button type="button" class="btn btn-outline-success" name="kakutei">確定</button></td>
 				</tr>
 			</table>
 		</div>
