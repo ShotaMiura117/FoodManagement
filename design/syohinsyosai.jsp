@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
+<%@ page import="java.util.*" %>
+<%@ page import="shokuzai_detail.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +21,15 @@
 		<div class="table">
 			<div class="tablehead">
 				<table>
+
+					<%
+						List<ShokuzaiBean> shokuzaiList = (List<ShokuzaiBean>) request.getAttribute("shokuzaiList");
+						ShokuzaiBean sbean = shokuzaiList.get(1);
+					%>
+
 					<tr>
 						<th>¤•i–¼</th>
-						<td>ƒ‰ƒƒ“</td>
+						<td><%=sbean.getMaterials_name()%></td>
 					</tr>
 					<tr>
 						<th>HŞ–¼</th>
