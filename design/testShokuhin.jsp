@@ -7,7 +7,28 @@
 <title>テスト画面</title>
 </head>
 <body>
-	<h2>テスト</h2>
+	<h3>テスト</h3>
+	<table border="3">
+		<try>
+		<th>食材id</th>
+		<th>pk_id</th>
+		<th>食材名</th>
+		</try>
+
+		<%
+			List<shokuzaiBean> shokuzaiList = (List<ShokzuairBean>) request.getAttribute("shokuzaiList");
+			for (int i = 0; i < shokuzaiList.size(); i++) {
+				ShokuzaiBean sbean = shokuzaiList.get(i);
+		%>
+		<tr>
+			<td><%=sbean.getShokuzai_id()%></td>
+			<td><%=sbean.getPk_id()%></td>
+			<td><%=sbean.getMaterials_name()%></td>
+		</tr>
+		<%
+			}
+		%>
+		</table>
 
 </body>
 </html>

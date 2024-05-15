@@ -13,6 +13,7 @@
 	<h1 class="top_title">商品詳細</h1>
 	<div class="but">
 		<button type="button">商品リストへ</button>
+		<a href="<%=request.getContextPath() %>/design/ManagementListpage.jsp" class="btn">食材リストに戻る</a>
 	</div>
 	<div class="container">
 		<div class="table">
