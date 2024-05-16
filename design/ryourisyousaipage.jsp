@@ -14,16 +14,17 @@
     <div class="container">
         <h1 class="top_title">料理詳細ページ</h1>
         <div class="btn">
-            <button>この料理を作る</button>
+            <button>キャンセル</button>
             <button>
-                <a href="#">作る料理の一覧ページへ</a>
+                <a href="#">料理の材料を保存</a>
             </button>
         </div>
         <div class="right_container">
             <div class="name">
-                料理名
+                料理名:
             </div>
-            <div class="time">分</div>
+            <div class="time">分
+            </div>
             <div class="list">
                <table>
                    <tr>
