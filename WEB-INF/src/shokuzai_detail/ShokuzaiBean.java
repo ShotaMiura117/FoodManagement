@@ -36,7 +36,6 @@ public class ShokuzaiBean {
 		this.unit_id = unit_id;
 //		this.default_volume = default_volume;
 
-
 	}
 
 	public int getShokuzai_id() {

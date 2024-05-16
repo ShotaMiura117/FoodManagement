@@ -9,30 +9,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+public class ShokuzaiDetailServlet extends HttpServlet {
 
-public class ShokuzaiDetailServlet extends HttpServlet{
+		public void doGet(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException{
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException{
-
+//	public void doPost(HttpServletRequest request,
+//			HttpServletResponse response) throws ServletException, IOException {
+//		request.setCharacterEncoding("Windows-31j");
+//		String save_method = request.getParameter("save_method");
+//
 		String forwardURL = null;
 		try {
 			List<ShokuzaiBean> shokuzaiList = ShokuzaiDAO.getShokuzaiList();
 			request.setAttribute("shokuzaiList", shokuzaiList);
 
-			/*正しいurl
-			forwardURL = "/design/syohinsyosai.jsp";*/
 
-			/*テスト用URL*/
-			forwardURL = "test_shokuzai_detail/testShokuhin.jsp";
+			//			正式なurl
+			//			forwardURL = "/design/syohinsyosai.jsp";
+
+			//			testShokhinページ
+			//			forwardURL = "test_shokuzai_detail/testShokuhin.jsp";
+
+			//			ShokuzaiDetailテスト用
+			forwardURL = "test_shokuzai_detail/shokuzaiDetail.jsp";
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			forwardURL = "/database/selecterror.jsp";
-//			↑詳細ページが無い時に表示するjsp（食品詳細が無いとはありえないと思うが、、）
+			//			↑詳細ページが無い時に表示するjsp（食品詳細が無いとはありえないと思うが、、）
 		}
 
-		request.getRequestDispatcher(forwardURL).forward(request,  response);
+		request.getRequestDispatcher(forwardURL).forward(request, response);
 	}
 
 }

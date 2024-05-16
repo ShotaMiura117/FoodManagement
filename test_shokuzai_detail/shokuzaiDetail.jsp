@@ -2,6 +2,7 @@
 	pageEncoding="windows-31j"%>
 <%@ page import="java.util.*"%>
 <%@ page import="shokuzai_detail.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +24,6 @@
 		<div class="table">
 			<div class="tablehead">
 				<table>
-
-
 					<%
 					List<ShokuzaiBean> shokuzaiList =
 					(List<ShokuzaiBean>)request.getAttribute("shokuzaiList");
@@ -44,26 +43,39 @@
 					</tr>
 					<tr>
 						<th>保存方法</th>
-						<td>冷凍</td>
+						<td>
+
+						<c:choose>
+								<c:when <%=sbean.getSave_method()%>="${option == 1}">
+								冷蔵庫
+								</c:when>
+								<c:when <%=sbean.getSave_method()%>="${option == 2}">
+								冷凍庫
+								</c:when>
+								<c:when<%=sbean.getSave_method()%>="${option == 3}">
+								野菜室
+								</c:when>
+								<c:when <%=sbean.getSave_method()%>="${option == 4}">
+								常温保存
+								</c:when>
+						</c:choose>
+						</td>
 					</tr>
 					<tr>
 						<th>開封状態</th>
-						<td><select name="hozon" id="save">
-								<option value="未開封">未開封</option>
-								<option value="開封">開封</option>
-						</select></td>
+						<td><%=sbean.getVolume()%></td>
 					</tr>
 					<tr>
 						<th>ジャンル</th>
-						<td>ラメン</td>
+						<td><%=sbean.getGenre_id()%></td>
 					</tr>
 					<tr>
 						<th>記入日時</th>
-						<td><input type="date" class="date" name="date"></td>
+						<td><%=sbean.getFilling_date()%></td>
 					</tr>
 					<tr>
 						<th>賞味期限．消費期限</th>
-						<td><input type="date" class="date" name="date1"></td>
+						<td><%=sbean.getExpiration_date()%></td>
 					</tr>
 				</table>
 				<br>
