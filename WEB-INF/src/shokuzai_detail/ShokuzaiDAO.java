@@ -14,12 +14,12 @@ public class ShokuzaiDAO {
 //	}
 
 	public static List<ShokuzaiBean> getShokuzaiList() throws SQLException{
-//		String sql = "SELECT shokuzai_id, pk_id, materials_name, "
-//				+ "item_name, quantity, open_check, save_method,"
-//				+ " genre_id, filling_date, expiration_date, volume,unit_id FROM SHOKUZAI";
+		String sql = "SELECT shokuzai_id, pk_id, materials_name, "
+				+ "item_name, quantity, open_check, save_method,"
+				+ " genre_id, filling_date, expiration_date, volume, unit_id FROM SHOKUZAI";
 
 //		テスト用
-		String sql = "SELECT shokuzai_id, pk_id, materials_name FROM SHOKUZAI";
+		/*String sql = "SELECT shokuzai_id, pk_id, materials_name FROM SHOKUZAI";*/
 
 
 //		where文で食材を特定する条件を入れる

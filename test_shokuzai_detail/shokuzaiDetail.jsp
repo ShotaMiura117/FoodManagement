@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
-<%@ page import="java.util.*" %>
-<%@ page import="shokuzai_detail.*" %>
+<%@ page import="java.util.*"%>
+<%@ page import="shokuzai_detail.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,29 +15,32 @@
 	<h1 class="top_title">商品詳細</h1>
 	<div class="but">
 		<!-- <button type="button" >商品リストへ</button> -->
-		<button onclick= "<%=request.getContextPath() %>/design/ManagementListpage.jsp"> 食材リストに戻る </button>
+		<button
+			onclick="<%=request.getContextPath()%>/design/ManagementListpage.jsp">
+			食材リストに戻る</button>
 	</div>
 	<div class="container">
 		<div class="table">
 			<div class="tablehead">
 				<table>
 
-					<%
-						List<ShokuzaiBean> shokuzaiList = (List<ShokuzaiBean>) request.getAttribute("shokuzaiList");
-						ShokuzaiBean sbean = shokuzaiList.get(1);
-					%>
 
+					<%
+					List<ShokuzaiBean> shokuzaiList =
+					(List<ShokuzaiBean>)request.getAttribute("shokuzaiList");
+					ShokuzaiBean sbean = shokuzaiList.get(1);
+		%>
 					<tr>
 						<th>商品名</th>
-						<td><%=sbean.getMaterials_name()%></td>
+						<td><%=sbean.getItem_name()%></td>
 					</tr>
 					<tr>
 						<th>食材名</th>
-						<td>ラメン</td>
+						<td><%=sbean.getMaterials_name()%></td>
 					</tr>
 					<tr>
 						<th>数量</th>
-						<td>2</td>
+						<td><%=sbean.getVolume()%></td>
 					</tr>
 					<tr>
 						<th>保存方法</th>
@@ -63,7 +66,6 @@
 						<td><input type="date" class="date" name="date1"></td>
 					</tr>
 				</table>
-
 				<br>
 				<div class="button">
 					<button type="button" class="b">編集</button>

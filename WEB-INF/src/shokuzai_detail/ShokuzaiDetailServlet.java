@@ -19,7 +19,13 @@ public class ShokuzaiDetailServlet extends HttpServlet{
 		try {
 			List<ShokuzaiBean> shokuzaiList = ShokuzaiDAO.getShokuzaiList();
 			request.setAttribute("shokuzaiList", shokuzaiList);
-			forwardURL = "/design/syohinsyosai.jsp";
+
+			/*正しいurl
+			forwardURL = "/design/syohinsyosai.jsp";*/
+
+			/*テスト用URL*/
+			forwardURL = "test_shokuzai_detail/testShokuhin.jsp";
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			forwardURL = "/database/selecterror.jsp";

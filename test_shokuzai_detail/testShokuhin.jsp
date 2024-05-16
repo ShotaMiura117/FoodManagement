@@ -11,11 +11,12 @@
 </head>
 <body>
 	<h3>テスト</h3>
-	<table border="3">
+	<table border="4">
 		<try>
 		<th>食材id</th>
 		<th>pk_id</th>
 		<th>食材名</th>
+		<th>volume</th>
 		</try>
 
 		<%
@@ -28,6 +29,7 @@
 			<td><%=sbean.getShokuzai_id()%></td>
 			<td><%=sbean.getPk_id()%></td>
 			<td><%=sbean.getMaterials_name()%></td>
+			<td><%=sbean.getVolume()%></td>
 		</tr>
 		<%
 			}
