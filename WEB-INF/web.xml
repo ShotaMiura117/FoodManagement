@@ -15,4 +15,16 @@
 		<url-pattern>/shokuzai</url-pattern>
 	</servlet-mapping>
 
+
+
+    <servlet>
+        <servlet-name>tourokuS</servlet-name>
+        <servlet-class>test.save_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tourokuS</servlet-name>
+        <url-pattern>/touroku</url-pattern>
+    </servlet-mapping>
+
+
 	</web-app>
