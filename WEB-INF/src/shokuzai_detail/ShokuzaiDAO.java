@@ -19,7 +19,7 @@ public class ShokuzaiDAO {
 //				+ " genre_id, filling_date, expiration_date, volume,unit_id FROM SHOKUZAI";
 
 //		テスト用
-		String sql = "SELECT shokuzai_id, pk_id, materials_name FROM SHOKUZAI where shokuzai_id = 1";
+		String sql = "SELECT shokuzai_id, pk_id, materials_name FROM SHOKUZAI";
 
 
 //		where文で食材を特定する条件を入れる
