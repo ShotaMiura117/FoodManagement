@@ -21,6 +21,14 @@
                          <td><input type="text" name="syouhinName" ></td>
                     </tr>
                     <tr>
+                        <th>ãCÇ…Ç»ÇÈ</th>
+                        <td>
+                            <input type="radio" name="favourite" value="1">Yes
+
+                            <input type="radio" name="favourite" value="2">No
+                        </td>
+                    </tr>
+                    <tr>
                         <th>êHçﬁñº</th>
                         <td><input type="text" name="syokuzaiName" ></td>
                     </tr>

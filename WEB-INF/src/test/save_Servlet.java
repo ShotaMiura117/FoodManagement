@@ -24,6 +24,9 @@ public class save_Servlet extends HttpServlet {
 		int open_check = Integer.parseInt(request.getParameter("open_check"));
 		int save_method = Integer.parseInt(request.getParameter("save_method"));
 		String filling_date = request.getParameter("filling_date");
+		int shokuzai_favorite = Integer.parseInt(request.getParameter("favourite"));
+		double default_volume =Double.parseDouble(request.getParameter("volume"));
+
 
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
@@ -33,7 +36,7 @@ public class save_Servlet extends HttpServlet {
 		} else {
 			try {
 				EntryBean ebean = new EntryBean(materials_name, item_name, expiration_date, volume,
-						unit_id, quantity, genre_id, open_check, save_method, filling_date);
+						unit_id, quantity, genre_id, open_check, save_method, filling_date,shokuzai_favorite,default_volume);
 
 				int saveCount = EntryDAO.insert(ebean);
 

@@ -1,72 +1,96 @@
+<%@ page language="java" contentType="text/html; charset=windows-31j"
+	pageEncoding="windows-31j"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>æ–™ç†è©³ç´°ãƒšãƒ¼ã‚¸</title>
-    <link rel="stylesheet" href="ryoriZairyoKinyu.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/8ff098a16e.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=windows-31j">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>—¿—Ú×ƒy[ƒW</title>
+<link rel="stylesheet" href="ryoriZairyoKinyu.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/8ff098a16e.js"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="top_title">æ–™ç†ã®ææ–™è¨˜å…¥ãƒšãƒ¼ã‚¸</h1>
-        <div class="right_container">
-            <div class="btn">
-            <button type="button" name="cancel">ã‚­ãƒ£ãƒ³ã‚»ãƒ«</button>
-            <button type="submit" name="hozon">æ–™ç†ã®ææ–™ä¿å­˜</button>  
-            </div>
-            <div class="name">
-                æ–™ç†å:<input type="text" name="name">
-                åˆ†:<input type="time" name="time">
-            </div>   
-            
-            <div class="but">
-                <button type="button">ã‚¿ã‚°ã®è¿½åŠ </button>
-            </div>
-            <div class="list">
-                   é£Ÿæ:
-                   <input type="text"  name="zairyo">
-                   æ•°é‡:
-                    <input type="number" name="suryo" max="500000000" min="1">
-                    å˜ä½:
-                    <input type="number" name="tani" max="5000000" min="1" style="font-size: smaller;">
+	<div class="container">
+		<h1 class="top_title">—¿—‚ÌÞ—¿‹L“üƒy[ƒW</h1>
+		<form action="<%=request.getContextPath()%>/ryori" method="POST">
+			<div class="right_container">
+				<div class="btn">
+					<button type="button" name="cancel">ƒLƒƒƒ“ƒZƒ‹</button>
+					<button type="submit" name="hozon">—¿—‚ÌÞ—¿•Û‘¶</button>
+				</div>
+				<div class="name">
+					—¿—–¼:<input type="text" name="name"> •ª:<input type="time"
+						name="time">
+				</div>
+				<div class="but">
+					<button id="rowAdder" type="button">ƒ^ƒO‚Ì’Ç‰Á</button>
+				</div>
+				<div class="list">
+					HÞ: <input type="text" name="zairyo"> ”—Ê: <input
+						type="number" name="suryo" max="500000000" min="1"> ’PˆÊ: <input
+						type="number" name="tani" max="5000000" min="1"
+						style="font-size: smaller;">
 
-                    <div class="listing">
-                    <ol>
-                    <li>ã²ãè‚‰:100g</li>
-                    <li>çŽ‰ã­ãŽ:1/2å€‹</li>
-                    <li>ãƒ”ãƒ¼ãƒžãƒ³:é©é‡</li>
-                    <li>äººå‚:é©é‡</li>
-                    </ol>
-                    </div>
-                    
-            </div>
-        </div> 
-        <div class="left-container">
-        <div class="total">
-       <div class="box">
-           <img src="photos/momo.jpg" alt="Food_image" style="width:250px;height:250px">
-       </div>
-       <div class="medium_box">
-           <button type="button" name="button">ã‚¿ã‚°ã®è¿½åŠ </button><br><br>
-           <button type="button">è‚‰ã€€<i class="fa-solid fa-xmark"></i></button>
-           <button type="button">ãƒãƒ³ãƒãƒ¼ã‚°ã€€<i class="fa-solid fa-xmark"></i></button>
-       </div>
-       <div class="small_box"><br>
-           <div class="link">
-               <button>
-                   <a href="#">å¤–éƒ¨ã‚µã‚¤ãƒˆãƒªãƒ³ã‚¯</a>
-               </button>
-           </div>
-       </div>
-       </div>
-      
-        
-      
-    </div>
-    </div>
-    
+					<div id="newinput"></div>
+
+					<div class="listing">
+						<ol>
+							<li>‚Ð‚«“÷:100g</li>
+							<li>‹Ê‚Ë‚¬:1/2ŒÂ</li>
+							<li>ƒs[ƒ}ƒ“:“K—Ê</li>
+							<li>lŽQ:“K—Ê</li>
+						</ol>
+					</div>
+				</div>
+
+	</div>
+	</form>
+	<div class="left-container">
+		<div class="total">
+			<div class="box">
+				<img src="photos/momo.jpg" alt="Food_image"
+					style="width: 250px; height: 250px">
+			</div>
+			<div class="medium_box">
+				<button type="button" name="button">ƒ^ƒO‚Ì’Ç‰Á</button>
+				<br> <br>
+				<button type="button">
+					“÷ <i class="fa-solid fa-xmark"></i>
+				</button>
+				<button type="button">
+					ƒnƒ“ƒo[ƒO <i class="fa-solid fa-xmark"></i>
+				</button>
+			</div>
+			<div class="small_box">
+				<br>
+				<div class="link">
+					<button>
+						<a href="#">ŠO•”ƒTƒCƒgƒŠƒ“ƒN</a>
+					</button>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		$("#rowAdder")
+				.click(
+						function() {
+							newRowAdd = '<div class="list">'
+									+ 'HÞ: <input type="text name="zairyo"> '
+									+ '”—Ê: <input type="number" name="suryo" max="500000000" min="1"> '
+									+ '’PˆÊ: <input type="number" name="tani" max="500000000" min="1" style="font-size:smaller;"> ';
+							$("#newinput").append(newRowAdd);
+						});
+	</script>
 </body>
 </html>

@@ -11,10 +11,13 @@ public class EntryBean {
 	private int open_check;
 	private int save_method;
 	private String filling_date;
+	private int shokuzai_favorite;
+	private double default_volume;
 
 
 	public EntryBean(String materials_name, String item_name, String expiration_date, double volume, int unit_id,
-			double quantity, int genre_id, int open_check, int save_method,String filling_date) {
+			double quantity, int genre_id, int open_check, int save_method,String filling_date, int shokuzai_favorite,
+			double default_volume) {
 		this.materials_name = materials_name;
 		this.item_name = item_name;
 		this.expiration_date = expiration_date;
@@ -25,6 +28,24 @@ public class EntryBean {
 		this.quantity = quantity;
 		this.filling_date = filling_date;
 		this.save_method = save_method;
+		this.shokuzai_favorite = shokuzai_favorite;
+		this.default_volume = volume;
+	}
+
+	public double getDefault_volume() {
+		return volume;
+	}
+
+	public void setDefault_volume(double default_volume) {
+		this.default_volume = volume;
+	}
+
+	public int getShokuzai_favorite() {
+		return shokuzai_favorite;
+	}
+
+	public void setShokuzai_favorite(int shokuzai_favorite) {
+		this.shokuzai_favorite = shokuzai_favorite;
 	}
 
 	public void setMaterials_name(String materials_name) {
