@@ -23,9 +23,7 @@
                     <tr>
                         <th>‹C‚É‚È‚é</th>
                         <td>
-                            <input type="radio" name="favourite" value="1">Yes
-
-                            <input type="radio" name="favourite" value="2">No
+                            <input type="checkbox" name="favourite" value="1">Yes <input type="checkbox" name="favourite" value="2">No
                         </td>
                     </tr>
                     <tr>
