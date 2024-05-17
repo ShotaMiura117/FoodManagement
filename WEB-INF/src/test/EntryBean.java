@@ -30,14 +30,15 @@ public class EntryBean {
 		this.save_method = save_method;
 		this.shokuzai_favorite = shokuzai_favorite;
 		this.default_volume = volume;
+
 	}
 
 	public double getDefault_volume() {
-		return volume;
+		return default_volume;
 	}
 
 	public void setDefault_volume(double default_volume) {
-		this.default_volume = volume;
+		this.default_volume = default_volume;
 	}
 
 	public int getShokuzai_favorite() {

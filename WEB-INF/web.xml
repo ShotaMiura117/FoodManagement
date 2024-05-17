@@ -29,7 +29,7 @@
 
 	<servlet>
         <servlet-name>ryoriS</servlet-name>
-        <servlet-class>ryoriZairyo.ryoriZairyoKinyoServlet</servlet-class>
+        <servlet-class>test.RyoriServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ryoriS</servlet-name>

@@ -18,12 +18,9 @@
 <body>
 	<div class="container">
 		<h1 class="top_title">料理の材料記入ページ</h1>
-		<form action="<%=request.getContextPath()%>/ryori" method="POST">
+		<form action="<%= request.getContextPath()%>/ryori" method="POST">
 			<div class="right_container">
-				<div class="btn">
-					<button type="button" name="cancel">キャンセル</button>
-					<button type="submit" name="hozon">料理の材料保存</button>
-				</div>
+
 				<div class="name">
 					料理名:<input type="text" name="name"> 分:<input type="time"
 						name="time">
@@ -47,6 +44,10 @@
 							<li>人参:適量</li>
 						</ol>
 					</div>
+					<div class="btn">
+					<button type="button" name="cancel">キャンセル</button>
+					<button type="submit" name="hozon">料理の材料保存</button>
+				</div>
 				</div>
 
 	</div>

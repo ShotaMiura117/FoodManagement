@@ -23,7 +23,7 @@
                     <tr>
                         <th>‹C‚É‚È‚é</th>
                         <td>
-                            <input type="checkbox" name="favourite" value="1">Yes <input type="checkbox" name="favourite" value="2">No
+                            <input type="checkbox" name="shokuzai_favorite" value="1">Yes <input type="checkbox" name="shokuzai_favorite" value="2">No
                         </td>
                     </tr>
                     <tr>
