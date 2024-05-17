@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
-<title>食材テスト画面トップ</title>
+<title>食品詳細エラー画面</title>
 </head>
 <body>
-<h1>テスト：食材詳細トップ</h1>
-<a href="<%=request.getContextPath() %>/shokuzai">食品詳細へ</a><br/>
 
-
-
+<front color="red">食材詳細を検索できませんでした</front>
+<br>
+<a href="<%=request.getContextPath() %>/test_shokuzai_detail/testshokuzaitop.jsp">テストトップに戻る</a>
 
 </body>
 </html>

@@ -14,7 +14,10 @@ public class ShokuzaiBean {
 	private String expiration_date;
 	private int volume;
 	private int unit_id;
-//	private double default_volume;
+	private double default_volume;
+	private int shokuzai_favorite;
+	private String genre_name;
+	private String unit_name;
 
 
 
@@ -22,7 +25,9 @@ public class ShokuzaiBean {
 	}
 	public ShokuzaiBean(int shokuzai_id, int pk_id, String materials_name, String item_name,
 			int quantity, int open_check, int save_method, int genre_id, String filling_date,
-			String expiration_date, int volume, int unit_id) {
+			String expiration_date, int volume, int unit_id, double default_volume,
+			int shokuzai_favorite, String genre_name, String unit_name) {
+
 		this.shokuzai_id = shokuzai_id;
 		this.pk_id = pk_id;
 		this.materials_name = materials_name;
@@ -34,7 +39,10 @@ public class ShokuzaiBean {
 		this.filling_date = filling_date;
 		this.expiration_date = expiration_date;
 		this.unit_id = unit_id;
-//		this.default_volume = default_volume;
+		this.default_volume = default_volume;
+		this.shokuzai_favorite = shokuzai_favorite;
+		this.genre_name = genre_name;
+		this.unit_name = unit_name;
 
 	}
 
@@ -68,14 +76,28 @@ public class ShokuzaiBean {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getOpen_check() {
-		return open_check;
+	public String getOpen_check() {
+		if(open_check == 1) {
+			return "開封済み";
+		} else{
+			return "未開封";
+		}
 	}
 	public void setOpen_check(int open_check) {
 		this.open_check = open_check;
 	}
-	public int getSave_method() {
-		return save_method;
+	public String getSave_method() {
+		if(save_method == 1) {
+			return "冷蔵庫";
+		} else if(save_method == 2) {
+			return "冷凍庫";
+		} else if(save_method == 3) {
+			return "野菜室";
+		} else if(save_method == 4) {
+			return "常温保存";
+		} else {
+			return null;
+		}
 	}
 	public void setSave_method(int save_method) {
 		this.save_method = save_method;
@@ -110,12 +132,29 @@ public class ShokuzaiBean {
 	public void setUnit_id(int unit_id) {
 		this.unit_id = unit_id;
 	}
-//	public double getDefault_volume() {
-//		return default_volume;
-//	}
-//	public void setDefault_volume(double default_volume) {
-//		this.default_volume = default_volume;
-//	}
-
+	public double getDefault_volume() {
+		return default_volume;
+	}
+	public void setDefault_volume(double default_volume) {
+		this.default_volume = default_volume;
+	}
+	public int getShokuzai_favorite() {
+		return shokuzai_favorite;
+	}
+	public void setShokuzai_favorite(int shokuzai_favorite) {
+		this.shokuzai_favorite = shokuzai_favorite;
+	}
+	public String getUnit_name() {
+		return unit_name;
+	}
+	public void setUnit_name(String unit_name) {
+		this.unit_name = unit_name;
+	}
+	public String getGenre_name() {
+		return genre_name;
+	}
+	public void setGenre_name(String genre_name) {
+		this.genre_name = genre_name;
+	}
 
 }

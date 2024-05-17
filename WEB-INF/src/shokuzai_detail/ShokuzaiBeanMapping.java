@@ -20,7 +20,10 @@ public class ShokuzaiBeanMapping implements ResultSetBeanMapping<ShokuzaiBean> {
 		sbean.setExpiration_date(rs.getString("expiration_date"));
 		sbean.setVolume(rs.getInt("volume"));
 		sbean.setUnit_id(rs.getInt("unit_id"));
-//		sbean.setDefault_volume(rs.getDouble("default_volume"));
+		sbean.setDefault_volume(rs.getDouble("default_volume"));
+		sbean.setShokuzai_favorite(rs.getInt("shokuzai_favorite"));
+		sbean.setUnit_name(rs.getString("unit_name"));
+		sbean.setGenre_name(rs.getString("genre_name"));
 		return sbean;
 	}
 }

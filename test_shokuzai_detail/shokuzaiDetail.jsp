@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=windows-31j">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品詳細ページ</title>
+<title>食品詳細ページ</title>
 <link rel="stylesheet" href="syouhinsyousai.css">
 </head>
 <body>
@@ -17,7 +17,11 @@
 	<div class="but">
 		<!-- <button type="button" >商品リストへ</button> -->
 		<button
-			onclick="<%=request.getContextPath()%>/design/ManagementListpage.jsp">
+			<%-- 正しいURL
+			onclick="location.href='<%=request.getContextPath()%>/design/ManagementListpage.jsp'"> --%>
+
+
+			onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/testshokuzaitop.jsp'">
 			食材リストに戻る</button>
 	</div>
 	<div class="container">
@@ -27,7 +31,7 @@
 					<%
 					List<ShokuzaiBean> shokuzaiList =
 					(List<ShokuzaiBean>)request.getAttribute("shokuzaiList");
-					ShokuzaiBean sbean = shokuzaiList.get(1);
+					ShokuzaiBean sbean = shokuzaiList.get(16);
 		%>
 					<tr>
 						<th>商品名</th>
@@ -39,35 +43,24 @@
 					</tr>
 					<tr>
 						<th>数量</th>
-						<td><%=sbean.getVolume()%></td>
+						<td><%=sbean.getVolume()%>
+						<%=sbean.getUnit_name() %>
+						×
+						<%=sbean.getQuantity() %>
+						</td>
 					</tr>
 					<tr>
 						<th>保存方法</th>
-						<td>
-
-						<c:choose>
-								<c:when <%=sbean.getSave_method()%>="${option == 1}">
-								冷蔵庫
-								</c:when>
-								<c:when <%=sbean.getSave_method()%>="${option == 2}">
-								冷凍庫
-								</c:when>
-								<c:when<%=sbean.getSave_method()%>="${option == 3}">
-								野菜室
-								</c:when>
-								<c:when <%=sbean.getSave_method()%>="${option == 4}">
-								常温保存
-								</c:when>
-						</c:choose>
+						<td><%=sbean.getSave_method() %>
 						</td>
 					</tr>
 					<tr>
 						<th>開封状態</th>
-						<td><%=sbean.getVolume()%></td>
+						<td><%=sbean.getOpen_check()%></td>
 					</tr>
 					<tr>
 						<th>ジャンル</th>
-						<td><%=sbean.getGenre_id()%></td>
+						<td><%=sbean.getGenre_name()%></td>
 					</tr>
 					<tr>
 						<th>記入日時</th>

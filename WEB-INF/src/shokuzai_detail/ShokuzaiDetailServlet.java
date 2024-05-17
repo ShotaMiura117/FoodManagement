@@ -25,6 +25,7 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 			request.setAttribute("shokuzaiList", shokuzaiList);
 
 
+
 			//			正式なurl
 			//			forwardURL = "/design/syohinsyosai.jsp";
 
@@ -36,7 +37,7 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			forwardURL = "/database/selecterror.jsp";
+			forwardURL = "/test_shokuzai_detail/testerror.jsp";
 			//			↑詳細ページが無い時に表示するjsp（食品詳細が無いとはありえないと思うが、、）
 		}
 
