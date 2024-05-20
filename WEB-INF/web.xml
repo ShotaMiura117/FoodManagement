@@ -5,6 +5,15 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
+<servlet>
+        <servlet-name>ryoriS</servlet-name>
+        <servlet-class>test.RyoriServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ryoriS</servlet-name>
+        <url-pattern>/ryori</url-pattern>
+    </servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>shokuzaiS</servlet-name>
@@ -27,14 +36,7 @@
     </servlet-mapping>
 
 
-	<servlet>
-        <servlet-name>ryoriS</servlet-name>
-        <servlet-class>test.RyoriServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ryoriS</servlet-name>
-        <url-pattern>/ryori</url-pattern>
-    </servlet-mapping>
+
 
 
 	</web-app>

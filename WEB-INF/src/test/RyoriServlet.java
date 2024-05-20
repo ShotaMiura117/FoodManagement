@@ -16,11 +16,11 @@ public class RyoriServlet extends HttpServlet {
 		String materials_name = request.getParameter("zairyo");
 		double volume = Double.parseDouble(request.getParameter("suryo"));
 		String unit_id = request.getParameter("tani");
-		String forwardURL = null;
+		//String forwardURL = null;
 		PrintWriter out = response.getWriter();
 		try {
 			RyoriBean rbean = new RyoriBean(materials_name, volume, unit_id);
-			int updateCount = RyoriDAO.insert(rbean);
+			int updateCount = RyoriDAO.insert1(rbean);
 			if (updateCount < 1) {
 				out.print("エラー");
 			} else {
@@ -34,6 +34,6 @@ public class RyoriServlet extends HttpServlet {
 			e.printStackTrace();
 
 		}
-		request.getRequestDispatcher(forwardURL).forward(request, response);
 	}
 }
+

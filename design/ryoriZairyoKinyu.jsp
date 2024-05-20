@@ -18,9 +18,8 @@
 <body>
 	<div class="container">
 		<h1 class="top_title">料理の材料記入ページ</h1>
-		<form action="<%= request.getContextPath()%>/ryori" method="POST">
-			<div class="right_container">
-
+		<div class="right_container">
+			<form action="<%= request.getContextPath() %>/ryori" method="POST">
 				<div class="name">
 					料理名:<input type="text" name="name"> 分:<input type="time"
 						name="time">
@@ -45,41 +44,41 @@
 						</ol>
 					</div>
 					<div class="btn">
-					<button type="button" name="cancel">キャンセル</button>
-					<button type="submit" name="hozon">料理の材料保存</button>
+						<button type="button" name="cancel">キャンセル</button>
+						<button type="submit" name="hozon">料理の材料保存</button>
+					</div>
 				</div>
-				</div>
-
-	</div>
-	</form>
-	<div class="left-container">
-		<div class="total">
-			<div class="box">
-				<img src="photos/momo.jpg" alt="Food_image"
-					style="width: 250px; height: 250px">
-			</div>
-			<div class="medium_box">
-				<button type="button" name="button">タグの追加</button>
-				<br> <br>
-				<button type="button">
-					肉 <i class="fa-solid fa-xmark"></i>
-				</button>
-				<button type="button">
-					ハンバーグ <i class="fa-solid fa-xmark"></i>
-				</button>
-			</div>
-			<div class="small_box">
-				<br>
-				<div class="link">
-					<button>
-						<a href="#">外部サイトリンク</a>
-					</button>
-				</div>
-
-			</div>
+			</form>
 		</div>
 
-	</div>
+		<div class="left-container">
+			<div class="total">
+				<div class="box">
+					<img src="photos/momo.jpg" alt="Food_image"
+						style="width: 250px; height: 250px">
+				</div>
+				<div class="medium_box">
+					<button type="button" name="button">タグの追加</button>
+					<br> <br>
+					<button type="button">
+						肉 <i class="fa-solid fa-xmark"></i>
+					</button>
+					<button type="button">
+						ハンバーグ <i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="small_box">
+					<br>
+					<div class="link">
+						<button>
+							<a href="#">外部サイトリンク</a>
+						</button>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
 	</div>
 
 	<script type="text/javascript">
