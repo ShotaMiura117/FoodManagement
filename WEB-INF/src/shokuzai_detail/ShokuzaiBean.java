@@ -65,7 +65,11 @@ public class ShokuzaiBean {
 		this.materials_name = materials_name;
 	}
 	public String getItem_name() {
-		return item_name;
+		if(item_name != null) {
+			return item_name;
+		} else {
+		return "";
+		}
 	}
 	public void setItem_name(String item_name) {
 		this.item_name = item_name;
@@ -96,7 +100,7 @@ public class ShokuzaiBean {
 		} else if(save_method == 4) {
 			return "常温保存";
 		} else {
-			return null;
+			return "";
 		}
 	}
 	public void setSave_method(int save_method) {
@@ -115,7 +119,11 @@ public class ShokuzaiBean {
 		this.filling_date = filling_date;
 	}
 	public String getExpiration_date() {
+		if (expiration_date != null) {
 		return expiration_date;
+		} else {
+			return "";
+		}
 	}
 	public void setExpiration_date(String expiration_date) {
 		this.expiration_date = expiration_date;

@@ -16,6 +16,16 @@
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>shokuzaiE</servlet-name>
+		<servlet-class>shokuzai_detail.ShokuzaiEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>shokuzaiE</servlet-name>
+		<url-pattern>/shokuzaie</url-pattern>
+	</servlet-mapping>
+
+
 
     <servlet>
         <servlet-name>tourokuS</servlet-name>
