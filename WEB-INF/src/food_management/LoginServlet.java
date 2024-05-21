@@ -1,6 +1,6 @@
 package food_management;
 
-import java.io.IOException;
+import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,11 +12,19 @@ public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username = request.getParameter("email");
+        String id = request.getParameter("email");
         String password = request.getParameter("password");
 
-        // ここでユーザー名とパスワードを検証する処理を追加します。
-        // 仮の検証を行う場合は、以下のコードをコメントアウトしてください。
+		response.setCharacterEncoding("Windows-31J");
+		PrintWriter out = response.getWriter();
+		out.println("ログインしました<br>");
+		out.println("入力された情報を表示します<br>");
+		out.println("ID : " + id + "    PASSWORD : " + password);
+
+		response.sendRedirect("success.jsp");
+
+
+        // 入力されたidとパスワードを検証する
         /*
         if ("admin".equals(username) && "admin".equals(password))
         {
