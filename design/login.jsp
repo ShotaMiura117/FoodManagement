@@ -42,14 +42,14 @@
 			<input type="password" class="form-control" id="floatingPassword"
 				placeholder="Password"> <label for="floatingPassword"><i
 				class="fa-solid fa-key"></i></label> <input type="checkbox"
-				onclick="myFunction()">パスワード見る
+				onclick="myFunction()">パスワードを表示する
 		</div>
-		<br> <a href="#">パスワードへ忘れた方へ</a><br> <br>
+		<br> <a href="#">パスワードを忘れた場合</a><br> <br>
 		<button class="w-100 btn btn-lg btn-primary" type="submit">ログイン</button>
 		<br> <br>
 	</form>
 	<div class="flex-container">
-		<a href="SignUp.jsp">アカウントがない方へ</a>
+		<a href="SignUp.jsp">新規アカウント登録</a>
 	</div>
 
 

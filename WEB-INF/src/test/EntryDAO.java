@@ -5,7 +5,7 @@ import java.sql.SQLException;
 public class EntryDAO {
 	public static int insert(EntryBean ebean) throws SQLException {
 		String sql = "INSERT INTO Shokuzai " +
-				"(materials_name, item_name, expiration_date, quantity, genre_id, open_check, save_method, filling_date, unit_id, volume,shokuzai_favorite,default_volume) VALUES ("
+				"(materials_name, item_name, expiration_date, quantity, genre_id, open_check, save_method, filling_date, unit_id, volume,default_volume,shokuzai_favorite) VALUES ("
 				+
 				"'" + ebean.getMaterials_name() + "', " +
 				"'" + ebean.getItem_name() + "', " +
@@ -17,8 +17,8 @@ public class EntryDAO {
 				"'" + ebean.getFilling_date() + "', " +
 				"'" + ebean.getUnit_id() + "', " +
 				"'" + ebean.getVolume() + "', " +
-				"'" + ebean.getShokuzai_favorite() + "', " +
-				"'" + ebean.getVolume() +")";
+				"'" + ebean.getDefault_volume() + "', " +
+					ebean.getShokuzai_favorite() + ")";
 
 		return DBManager.simpleUpdate(sql);
 

@@ -1,15 +1,15 @@
-package ryoriZairyo;
+package test;
 
-public class ryoriZairyoBean {
+public class RyoriBean {
 	private String materials_name;
-	private double volume;
-	private String unit;
+	private  double volume;
+	private String unit_id;
 
 
-	public ryoriZairyoBean(String materials_name, double volume, String unit) {
+	public RyoriBean(String materials_name, double volume, String unit_id) {
 		this.materials_name = materials_name;
 		this.volume = volume;
-		this.unit = unit;
+		this.unit_id = unit_id;
 	}
 
 
@@ -33,15 +33,12 @@ public class ryoriZairyoBean {
 	}
 
 
-	public String getUnit() {
-		return unit;
+	public String getUnit_id() {
+		return unit_id;
 	}
 
 
-	public void setUnit(String unit) {
-		this.unit = unit;
+	public void setUnit_id(String unit_id) {
+		this.unit_id = unit_id;
 	}
-
-
 }
-
