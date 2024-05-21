@@ -31,12 +31,16 @@
 		<div class="table">
 			<div class="tablehead">
 				<table>
+
+				<!-- セッションから食材リストを取得 -->
 					<%
 					List<ShokuzaiBean> shokuzaiList =
 					(List<ShokuzaiBean>)request.getAttribute("shokuzaiList");
+					/* 食材リストの(i)番目をShokuzaibeanにセット */
 					ShokuzaiBean sbean = shokuzaiList.get(1);
 
 		%>
+
 					<tr>
 						<th>商品名</th>
 						<td><%=sbean.getItem_name()%></td>
@@ -77,15 +81,13 @@
 				</table>
 				<br>
 				<div class="button">
-					<button type="button" class="b"
+					<button type="button" class="b" name="edit_btn" value="編集"
 					onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/shokuzaiEdit.jsp'">
 					編集
+
+<!-- 					もし編集を押したらshokuzaiList(i)をセッションに入れる処理を追加する必要がある
+ -->
 					</button>
-
-
-
-
-
 
 					<br> <br>
 					<button type="button" class="btn">削除</button>

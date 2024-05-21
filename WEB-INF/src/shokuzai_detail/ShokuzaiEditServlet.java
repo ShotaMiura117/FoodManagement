@@ -12,6 +12,7 @@ public class ShokuzaiEditServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("Windows-31j");
+
 		String materials_name = request.getParameter("syouhinName");
 		String item_name = request.getParameter("syokuzaiName");
 		String quantity = request.getParameter("quantity");
@@ -31,16 +32,14 @@ public class ShokuzaiEditServlet extends HttpServlet {
 					Double.parseDouble(quantity), Integer.parseInt(open_check), Integer.parseInt(save_method),
 					Integer.parseInt(genre_id), filling_date, expiration_date,
 					volume, unit_id, shokuzai_favorite);
-
-
-
-//					Double.parseDouble(volume), Integer.parseInt(unit_id), Integer.parseInt(shokuzai_favorite));
 			int updateCount = ShokuzaiDAO.insert(sebean);
 
 			if (updateCount < 1) {
 				forwardURL = "/test_shokuzai_detail/testerror.jsp";
 			} else {
-				forwardURL = "/database/registsuccess.jsp";
+				forwardURL = "/test_shokuzai_detail/testEditSuccess.jsp";
+				System.out.println("食材情報を更新しました");
+
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

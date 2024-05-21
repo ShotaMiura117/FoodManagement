@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
+<%@ page import="java.util.Date, java.text.DateFormat" %>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
 <meta http-equiv="content-type" content="text/html; charset=windows-31j">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>食材編集ページ</title>
-<link rel="stylesheet" href="syohinkinyupage.css">
+<link rel="stylesheet" href="design/syohinkinyupage.css" type="text/css">
 </head>
 <body>
 	<div class="container">
@@ -17,38 +21,57 @@
 					method="POST">
 					<table>
 
+				<%-- 		<%
+							List<ShokuzaiBean> shokuzaiList = (List<ShokuzaiBean>) request.getAttribute("shokuzaiList");
+							/* 食材リストの(i)番目をShokuzaibeanにセット */
+							ShokuzaiBean sbean = shokuzaiList.get(1);
+
+						%> --%>
+
 
 						<caption>編集ページ</caption>
 						<tr>
 							<th>商品名</th>
-							<td><input type="text" value="商品名" name="syouhinName"></td>
+							<td><input type="text" value="<%=session.getAttribute("item_name")%>"
+							name="syouhinName"></td>
 						</tr>
 						<tr>
 							<th>気になる</th>
-							<td><input type="checkbox" name="favorite" value="1">Yes
-								<input type="checkbox" name="favorite" value="0">No</td>
+								<td>
+								<input type="checkbox" name="favorite" value="1" checked>Yes
+								<input type="checkbox" name="favorite" value="0">No
+								</td>
+
 						</tr>
 						<tr>
 							<th>食材名</th>
-							<td><input type="text" name="syokuzaiName"></td>
+							<td><input type="text" name="syokuzaiName"
+							value="<%=session.getAttribute("materials_name")%>">
+							</td>
 						</tr>
 						<tr>
 							<th>数量</th>
 							<td><input type="number" name="volume" max="5000000"
+							value="<%=session.getAttribute("volume")%>"
 								min="1">
 								<select name="unit_id">
+									<option value=""selected disabled>選択必須</option>
 									<option value="1">g</option>
 									<option value="2">ml</option>
 									<option value="3">個</option>
-							</select></td>
+							</select>
+
+							</td>
 						<tr>
 							<th>×</th>
 							<td><input type="number" name="quantity" max="5000000"
-								min="1"></td>
+								min="1" value="<%=session.getAttribute("quantity")%>">
+								</td>
 						</tr>
 						<tr>
 							<th>保存方法</th>
 							<td><select name="save_method" id="save">
+									<option value=""selected disabled>選択必須</option>
 									<option value="1">冷蔵庫</option>
 									<option value="2">冷凍庫</option>
 									<option value="3">野菜室</option>
@@ -58,13 +81,14 @@
 						<tr>
 							<th>開封状態</th>
 							<td><input type="checkbox" name="open_check" value="1"
-								checked>開封済み
+								>開封済み
 								<input type="checkbox" name="open_check" value="0">
 								未開封</td>
 						</tr>
 						<tr>
 							<th>ジャンル</th>
 							<td><select name="genre_id">
+									<option value=""selected disabled>選択必須</option>
 									<option value="1">肉類</option>
 									<option value="2">野菜</option>
 									<option value="3">果物</option>
@@ -88,10 +112,20 @@
 							<td><input type="text" name="filling_date" required>
 							</td>
 						</tr>
+
+<!-- 						<tr>
+							<th>記入日</th>
+							<td><input type="date"  name="filling_date"
+							required></td>
+						</tr> -->
+
+
 						<tr>
 							<th>賞味期限．消費期限</th>
 							<td><input type="date" class="date" name="expiration_date"
-								required></td>
+							value="<%=session.getAttribute("expiration_date")%>"
+								required>
+								</td>
 						</tr>
 					</table>
 					<br>

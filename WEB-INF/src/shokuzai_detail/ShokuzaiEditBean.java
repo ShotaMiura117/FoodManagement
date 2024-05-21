@@ -22,21 +22,17 @@ public class ShokuzaiEditBean {
 			String filling_date, String expiration_date, double volume, int unit_id,
 			int shokuzai_favorite) {
 
-//	public ShokuzaiEditBean(String materials_name, String item_name,
-//			int quantity) {
-
 
 		this.materials_name = materials_name;
 		this.item_name = item_name;
 		this.quantity = quantity;
-//		this.open_check = open_check;
-//		this.save_method = save_method;
-//		this.genre_id = genre_id;
-//		this.filling_date = filling_date;
-//		this.expiration_date = expiration_date;
-//		this.unit_id = unit_id;
-//
-//		this.shokuzai_favorite = shokuzai_favorite;
+		this.open_check = open_check;
+		this.save_method = save_method;
+		this.genre_id = genre_id;
+		this.filling_date = filling_date;
+		this.expiration_date = expiration_date;
+		this.unit_id = unit_id;
+		this.shokuzai_favorite = shokuzai_favorite;
 
 
 	}
