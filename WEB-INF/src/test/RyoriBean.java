@@ -3,15 +3,18 @@ package test;
 public class RyoriBean {
 	private String name;
 	private int time;
-	//private InputStream image;
 	private String materials_name;
 	private int volume;
 	private String unit;
 
-	public RyoriBean(String name,int time,String materials_name, int volume, String unit) {
+
+	public RyoriBean() {
+
+	}
+
+	public RyoriBean(String name, String materials_name, int time, int volume, String unit) {
 		this.name = name;
 		this.time = time;
-		//this.image = image;
 		this.materials_name = materials_name;
 		this.volume = volume;
 		this.unit = unit;
@@ -32,14 +35,6 @@ public class RyoriBean {
 	public void setTime(int time) {
 		this.time = time;
 	}
-/*
-	public InputStream getImage() {
-		return image;
-	}
-
-	public void setImage(InputStream image) {
-		this.image = image;
-	}*/
 
 	public String getMaterials_name() {
 		return materials_name;
@@ -64,7 +59,5 @@ public class RyoriBean {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
-
-
 
 }

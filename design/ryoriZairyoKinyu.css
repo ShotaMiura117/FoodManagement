@@ -18,6 +18,7 @@
 .btn{
     display: flex;
     justify-content: space-between;
+    padding-top: 30px;
 }
 .medium_box{
     border: 1px solid black;

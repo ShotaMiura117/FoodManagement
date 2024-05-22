@@ -22,8 +22,9 @@
                     </tr>
                     <tr>
                         <th>気になる</th>
-                        <td>
-                            <input type="checkbox" name="shokuzai_favorite" value="1">Yes <input type="checkbox" name="shokuzai_favorite" value="2">No
+                        <td><input type="hidden" name="shokuzai_favorite" value="0">
+                            <input type="radio" name="shokuzai_favorite" value="1" >Yes <input type="radio" name="shokuzai_favorite" value="0">No
+
                         </td>
                     </tr>
                     <tr>
@@ -57,7 +58,7 @@
                     <tr>
                         <th>開封状態</th>
                         <td>
-                            <input type="checkbox" name="open_check" value="1" checked>開封済み<input type="checkbox" name="open_check" value="0">未開封
+                            <input type="radio" name="open_check" value="1" checked>開封済み<input type="radio" name="open_check" value="0">未開封
 
                         </td>
                     </tr>

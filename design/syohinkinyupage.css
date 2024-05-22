@@ -23,33 +23,33 @@ table {
   th:nth-child(1){
     background-color: antiquewhite;
   }
-  .b{  
-    padding: 5px 20px;  
-    border-radius: 10px;  
+  .b{
+    padding: 5px 20px;
+    border-radius: 10px;
     color: black;
-    
-}  
-.b:active{  
-    transform: scale(0.98);  
-}  
-.b:hover{  
-    background-color: black;  
-    color: white;  
-}  
-.btn{  
-  padding: 5px 40px;  
-  border-radius: 10px;  
+
+}
+.b:active{
+    transform: scale(0.98);
+}
+.b:hover{
+    background-color: black;
+    color: white;
+}
+.btn{
+  padding: 5px 40px;
+  border-radius: 10px;
   background: red;
   color: white;
-  
-}  
-.btn:active{  
-  transform: scale(0.98);  
-}  
-.btn:hover{  
-  background-color:chocolate;  
-  color:white;  
-}  
+
+}
+.btn:active{
+  transform: scale(0.98);
+}
+.btn:hover{
+  background-color:chocolate;
+  color:white;
+}
 .button{
 text-align: right;
 padding-right: 18%;

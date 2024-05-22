@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
+<%@ page import="java.util.*"%>
+<%@ page import="test.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,29 +23,42 @@
 		<div class="right_container">
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					料理名:<input type="text" name="name"> 分:<input type="text"
-						name="time"><br>
-					<br> <!--  <input type="file" name="image"> -->
+					料理名:<input type="text" name="name"> 分:<input type="number"
+						name="time"><br> <br>
 				</div>
-				<div class="but">
+				<!--<div class="but">
 					<button id="rowAdder" type="button">タグの追加</button>
-				</div>
+				</div>-->
 				<div id="ingredientContainer">
 					<div class="list">
 						食材: <input type="text" name="zairyo"> 数 量: <input
 							type="number" name="suryo" max="500000000" min="1"> 単位: <input
 							type="number" name="tani" max="5000000" min="1"
 							style="font-size: smaller;">
-						<button type="button" class="rowDelete">削除</button>
+						<!--<button type="button" class="rowDelete">削除</button>-->
 					</div>
 				</div>
-				<div></div>
+
 				<div class="btn">
 					<a href="ryoriZairyoKinyu.jsp"><button type="button"
 							name="cancel">キャンセル</button></a>
 					<button type="submit" name="hozon">料理の材料保存</button>
 				</div>
 			</form>
+
+			<%
+				List<?> ryoriList = (List<?>) request.getAttribute("ryoriList");
+				if (ryoriList != null) {
+					for (int i = 0; i < ryoriList.size(); i++) {
+						RyoriBean rbean = (RyoriBean) ryoriList.get(i);
+			%>
+			<p><%=rbean.getName()%></p>
+			<p><%=rbean.getTime()%></p>
+			<%
+				}
+				}
+			%>
+			<%=request.getAttribute("name")%>
 		</div>
 		<div class="left-container">
 			<div class="total">
@@ -72,6 +87,7 @@
 			</div>
 		</div>
 	</div>
+	<!--
 	<script type="text/javascript">
 		$(document)
 				.ready(
@@ -92,6 +108,6 @@
 								$(this).closest('.list').remove();
 							});
 						});
-	</script>
+	</script>  -->
 </body>
 </html>

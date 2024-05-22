@@ -75,4 +75,15 @@
     </servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>resultS</servlet-name>
+		<servlet-class>test.ResultServlet</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>resultS</servlet-name>
+		<url-pattern>/result</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

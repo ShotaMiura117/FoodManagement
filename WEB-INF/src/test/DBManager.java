@@ -2,8 +2,11 @@ package test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBManager {
 	public static Connection getConnection() throws SQLException {
@@ -42,4 +45,37 @@ public class DBManager {
 			}
 		}
 	}
+public static <T> List<T> findAll(String sql, RyoriSetBeanMapping<T> mapping)
+		throws SQLException{
+		Connection con = null;
+		Statement smt = null;
+		try {
+			con = getConnection();
+			smt = con.createStatement();
+			ResultSet rs = smt.executeQuery(sql);
+
+			List<T> list = new ArrayList<T>();
+			while (rs.next()) {
+				T bean = mapping.createFromResultSet(rs);
+				list.add(bean);
+			}
+			return list;
+		} finally {
+			if (smt != null) {
+				try {
+					smt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }
+
