@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 		out.println("入力された情報を表示します<br>");
 		out.println("ID : " + id + "    PASSWORD : " + password);
 
-		response.sendRedirect("success.jsp");
+		//response.sendRedirect("success.jsp");
 
 
         // 入力されたidとパスワードを検証する

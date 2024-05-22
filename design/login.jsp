@@ -29,7 +29,7 @@
 <body class="text-center">
 
 	<main class="form-signin">
-	<form>
+	<form action = <%=request.getContextPath() %>/login method ="Post">
 		<h1 class="h3 mb-3 fw-normal">ƒƒOƒCƒ“</h1>
 
 		<div class="form-floating">
