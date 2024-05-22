@@ -49,6 +49,15 @@
 		<url-pattern>/shokuzaie</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>shokuzaiD</servlet-name>
+		<servlet-class>shokuzai_detail.ShokuzaiDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>shokuzaiD</servlet-name>
+		<url-pattern>/shokuzaid</url-pattern>
+	</servlet-mapping>
+
 
 
 	<servlet>

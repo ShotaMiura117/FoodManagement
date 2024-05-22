@@ -3,7 +3,6 @@
 <%@ page import="java.util.Date, java.text.DateFormat" %>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,32 +19,24 @@
 				<form action="<%=request.getContextPath()%>/shokuzaie"
 					method="POST">
 					<table>
-
-				<%-- 		<%
-							List<ShokuzaiBean> shokuzaiList = (List<ShokuzaiBean>) request.getAttribute("shokuzaiList");
-							/* 食材リストの(i)番目をShokuzaibeanにセット */
-							ShokuzaiBean sbean = shokuzaiList.get(1);
-
-						%> --%>
-
-
 						<caption>編集ページ</caption>
 						<tr>
 							<th>商品名</th>
 							<td><input type="text" value="<%=session.getAttribute("item_name")%>"
-							name="syouhinName"></td>
+							name="item_name"></td>
 						</tr>
 						<tr>
 							<th>気になる</th>
 								<td>
-								<input type="checkbox" name="favorite" value="1" checked>Yes
-								<input type="checkbox" name="favorite" value="0">No
+								<input type="hidden" name="favorite" value="0">
+								<input type="radio" name="favorite" value="1">Yes
+								<input type="radio" name="favorite" value="0">No
 								</td>
 
 						</tr>
 						<tr>
 							<th>食材名</th>
-							<td><input type="text" name="syokuzaiName"
+							<td><input type="text" name="materials_name"
 							value="<%=session.getAttribute("materials_name")%>">
 							</td>
 						</tr>
@@ -80,9 +71,10 @@
 						</tr>
 						<tr>
 							<th>開封状態</th>
-							<td><input type="checkbox" name="open_check" value="1"
-								>開封済み
-								<input type="checkbox" name="open_check" value="0">
+							<td><input type='hidden' value='0' name="open_check">
+								<input type="radio" name="open_check" value="1" >
+								開封済み
+								<input type="radio" name="open_check" value="0">
 								未開封</td>
 						</tr>
 						<tr>
@@ -107,24 +99,19 @@
 									<option value="16">その他</option>
 							</select></td>
 						</tr>
-						<tr>
+ 						<tr>
 							<th>記入日</th>
-							<td><input type="text" name="filling_date" required>
+							<td><input type="date"  name="filling_date"
+							value="<%=session.getAttribute("filling_date")%>" required>
 							</td>
 						</tr>
 
-<!-- 						<tr>
-							<th>記入日</th>
-							<td><input type="date"  name="filling_date"
-							required></td>
-						</tr> -->
-
-
 						<tr>
 							<th>賞味期限．消費期限</th>
-							<td><input type="date" class="date" name="expiration_date"
+							<td>
+  							<input type="date" class="date" name="expiration_date"
 							value="<%=session.getAttribute("expiration_date")%>"
-								required>
+							required>
 								</td>
 						</tr>
 					</table>

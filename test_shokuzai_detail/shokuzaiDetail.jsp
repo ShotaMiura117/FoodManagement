@@ -11,9 +11,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>食品詳細ページ</title>
 <link rel="stylesheet" href="design/syouhinsyousai.css" type="text/css">
-
-
-
 </head>
 <body>
 	<h1 class="top_title">商品詳細</h1>
@@ -37,13 +34,13 @@
 					List<ShokuzaiBean> shokuzaiList =
 					(List<ShokuzaiBean>)request.getAttribute("shokuzaiList");
 					/* 食材リストの(i)番目をShokuzaibeanにセット */
-					ShokuzaiBean sbean = shokuzaiList.get(1);
-
+					ShokuzaiBean sbean = shokuzaiList.get(0);
 		%>
-
 					<tr>
 						<th>商品名</th>
-						<td><%=sbean.getItem_name()%></td>
+						<td>
+						<%=sbean.getItem_name()%>
+						</td>
 					</tr>
 					<tr>
 						<th>食材名</th>
@@ -81,16 +78,17 @@
 				</table>
 				<br>
 				<div class="button">
+				<!-- 編集ページに遷移 -->
 					<button type="button" class="b" name="edit_btn" value="編集"
 					onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/shokuzaiEdit.jsp'">
 					編集
-
-<!-- 					もし編集を押したらshokuzaiList(i)をセッションに入れる処理を追加する必要がある
- -->
 					</button>
 
 					<br> <br>
-					<button type="button" class="btn">削除</button>
+				<!-- 食材データを削除 -->
+					<button type="button" class="btn" name="delete" value="削除"
+					onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/deleteCheck.jsp'"
+					>削除</button>
 				</div>
 			</div>
 		</div>

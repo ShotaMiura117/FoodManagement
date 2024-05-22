@@ -2,6 +2,7 @@ package shokuzai_detail;
 
 public class ShokuzaiEditBean {
 
+	private int shokuzai_id;
 	private String materials_name;
 	private String item_name;
 	private double quantity;
@@ -17,13 +18,14 @@ public class ShokuzaiEditBean {
 	public ShokuzaiEditBean() {
 	}
 
-	public ShokuzaiEditBean(String materials_name, String item_name,
+	public ShokuzaiEditBean(int shokuzai_id, String materials_name, String item_name,
 			double quantity, int open_check, int save_method, int genre_id,
 			String filling_date, String expiration_date, double volume, int unit_id,
 			int shokuzai_favorite) {
 
 
 		this.materials_name = materials_name;
+		this.shokuzai_id = shokuzai_id;
 		this.item_name = item_name;
 		this.quantity = quantity;
 		this.open_check = open_check;
@@ -31,10 +33,17 @@ public class ShokuzaiEditBean {
 		this.genre_id = genre_id;
 		this.filling_date = filling_date;
 		this.expiration_date = expiration_date;
+		this.volume = volume;
 		this.unit_id = unit_id;
 		this.shokuzai_favorite = shokuzai_favorite;
 
+	}
 
+	public int getShokuzai_id() {
+		return shokuzai_id;
+	}
+	public void setShokuzai_id(int shokuzai_id) {
+		this.shokuzai_id = shokuzai_id;
 	}
 
 	public String getMaterials_name() {

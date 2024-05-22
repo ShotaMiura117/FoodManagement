@@ -16,12 +16,11 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 		String forwardURL = null;
 		try {
 			List<ShokuzaiBean> shokuzaiList = ShokuzaiDAO.getShokuzaiList();
-
 			//			セッションに格納
 			request.setAttribute("shokuzaiList", shokuzaiList);
+			//			 食材リストの(0)番目をShokuzaibeanにセット
+			ShokuzaiBean sbean = shokuzaiList.get(0);
 
-			//			 食材リストの(1)番目をShokuzaibeanにセット
-			ShokuzaiBean sbean = shokuzaiList.get(1);
 
 			//			食材beanのデータをセッションに追加
 			HttpSession session = request.getSession();
@@ -36,7 +35,7 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 			session.setAttribute("volume", sbean.getVolume());
 			session.setAttribute("unit_id", sbean.getUnit_id());
 			session.setAttribute("favorite", sbean.getShokuzai_favorite());
-
+			session.setAttribute("shokuzai_id", sbean.getShokuzai_id());
 
 			//			ShokuzaiDetailテスト
 			forwardURL = "test_shokuzai_detail/shokuzaiDetail.jsp";
@@ -44,7 +43,12 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			forwardURL = "/test_shokuzai_detail/testerror.jsp";
-			//			↑詳細ページが無い時に表示するjsp（食品詳細が無いとはありえないと思うが、、）
+			//			sqlエラーで詳細ページに飛べない時
+		} catch (IndexOutOfBoundsException e) {
+			e.printStackTrace();
+			forwardURL = "/test_shokuzai_detail/testerror.jsp";
+			System.out.println("食材が存在しません");
+			//			食材が存在しない時
 		}
 
 		request.getRequestDispatcher(forwardURL).forward(request, response);
