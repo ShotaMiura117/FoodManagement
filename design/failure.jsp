@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
+
+<% String url_name = "http://localhost:8080/FoodManagement/design/login.jsp"; %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +17,7 @@
 
 <h3>ログイン失敗しました。</h3>
 
-<form action="<%=request.getContextPath() %>/login" method = "Post">
-
-	<input type = "submit" name = "btn" value = "ログインページ">
-
-</form>
+<a href=<%=url_name %>>ログインページに戻る</a>
 
 </body>
 

@@ -15,24 +15,25 @@ public class LoginServlet extends HttpServlet {
         String id = request.getParameter("email");
         String password = request.getParameter("password");
 
+        // 入力情報を表示させて確認
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
 		out.println("ログインしました<br>");
 		out.println("入力された情報を表示します<br>");
 		out.println("ID : " + id + "    PASSWORD : " + password);
 
-		//response.sendRedirect("success.jsp");
+		response.sendRedirect("design/failure.jsp");
 
 
         // 入力されたidとパスワードを検証する
         /*
-        if ("admin".equals(username) && "admin".equals(password))
+        if ("admin".equals(id) && "admin".equals(password))
         {
-            response.sendRedirect("success.jsp");
+            response.sendRedirect("design/success.jsp");
         }
         else
         {
-            response.sendRedirect("failure.jsp");
+            response.sendRedirect("design/failure.jsp");
         }
         */
     }
