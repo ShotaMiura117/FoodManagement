@@ -19,38 +19,32 @@
 	<div class="container">
 		<h1 class="top_title">料理の材料記入ページ</h1>
 		<div class="right_container">
-			<form action="<%= request.getContextPath() %>/ryori" method="POST">
+			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					料理名:<input type="text" name="name"> 分:<input type="time"
-						name="time">
+					料理名:<input type="text" name="name"> 分:<input type="text"
+						name="time"><br>
+					<br> <!--  <input type="file" name="image"> -->
 				</div>
 				<div class="but">
 					<button id="rowAdder" type="button">タグの追加</button>
 				</div>
-				<div class="list">
-					食材: <input type="text" name="zairyo"> 数量: <input
-						type="number" name="suryo" max="500000000" min="1"> 単位: <input
-						type="number" name="tani" max="5000000" min="1"
-						style="font-size: smaller;">
-
-					<div id="newinput"></div>
-
-					<div class="listing">
-						<ol>
-							<li>ひき肉:100g</li>
-							<li>玉ねぎ:1/2個</li>
-							<li>ピーマン:適量</li>
-							<li>人参:適量</li>
-						</ol>
+				<div id="ingredientContainer">
+					<div class="list">
+						食材: <input type="text" name="zairyo"> 数 量: <input
+							type="number" name="suryo" max="500000000" min="1"> 単位: <input
+							type="number" name="tani" max="5000000" min="1"
+							style="font-size: smaller;">
+						<button type="button" class="rowDelete">削除</button>
 					</div>
-					<div class="btn">
-						<button type="button" name="cancel">キャンセル</button>
-						<button type="submit" name="hozon">料理の材料保存</button>
-					</div>
+				</div>
+				<div></div>
+				<div class="btn">
+					<a href="ryoriZairyoKinyu.jsp"><button type="button"
+							name="cancel">キャンセル</button></a>
+					<button type="submit" name="hozon">料理の材料保存</button>
 				</div>
 			</form>
 		</div>
-
 		<div class="left-container">
 			<div class="total">
 				<div class="box">
@@ -74,22 +68,29 @@
 							<a href="#">外部サイトリンク</a>
 						</button>
 					</div>
-
 				</div>
 			</div>
-
 		</div>
 	</div>
-
 	<script type="text/javascript">
-		$("#rowAdder")
-				.click(
+		$(document)
+				.ready(
 						function() {
-							newRowAdd = '<div class="list">'
-									+ '食材: <input type="text name="zairyo"> '
-									+ '数量: <input type="number" name="suryo" max="500000000" min="1"> '
-									+ '単位: <input type="number" name="tani" max="500000000" min="1" style="font-size:smaller;"> ';
-							$("#newinput").append(newRowAdd);
+							$("#rowAdder")
+									.click(
+											function() {
+												var newRow = '<div class="list">'
+														+ '食材: <input type="text" name="zairyo[]"> '
+														+ '数量: <input type="number" name="suryo[]" max="500000000" min="1"> '
+														+ '単位: <input type="number" name="tani[]" max="5000000" min="1" style="font-size: smaller;"> '
+														+ '<button type="button" class="rowDelete">削除</button>'
+														+ '</div>';
+												$("#ingredientContainer")
+														.append(newRow);
+											});
+							$(document).on("click", ".rowDelete", function() {
+								$(this).closest('.list').remove();
+							});
 						});
 	</script>
 </body>

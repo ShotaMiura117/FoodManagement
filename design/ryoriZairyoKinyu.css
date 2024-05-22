@@ -10,7 +10,7 @@
     overflow: auto;
     flex: 50%;
     background-color: #BACD92;
-    
+
 }
 .top_title{
     text-align: center;
@@ -24,7 +24,7 @@
     width: 250px;
     height: 100px;
     margin-top: 20px;
-  
+
 }
 .medium_box button{
     letter-spacing: 2px;
@@ -72,7 +72,7 @@ table {
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   .list{
       margin-top: 20px;
       text-align: left;
@@ -96,4 +96,6 @@ table {
   .listing{
       margin-top: 20px;
   }
-  
+ .listing p{
+  text-align:center;
+  }

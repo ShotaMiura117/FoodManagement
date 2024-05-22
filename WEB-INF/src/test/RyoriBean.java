@@ -1,44 +1,70 @@
 package test;
 
 public class RyoriBean {
+	private String name;
+	private int time;
+	//private InputStream image;
 	private String materials_name;
-	private  double volume;
-	private String unit_id;
+	private int volume;
+	private String unit;
 
-
-	public RyoriBean(String materials_name, double volume, String unit_id) {
+	public RyoriBean(String name,int time,String materials_name, int volume, String unit) {
+		this.name = name;
+		this.time = time;
+		//this.image = image;
 		this.materials_name = materials_name;
 		this.volume = volume;
-		this.unit_id = unit_id;
+		this.unit = unit;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+/*
+	public InputStream getImage() {
+		return image;
+	}
+
+	public void setImage(InputStream image) {
+		this.image = image;
+	}*/
 
 	public String getMaterials_name() {
 		return materials_name;
 	}
 
-
 	public void setMaterials_name(String materials_name) {
 		this.materials_name = materials_name;
 	}
 
-
-	public double getVolume() {
+	public int getVolume() {
 		return volume;
 	}
 
-
-	public void setVolume(double volume) {
+	public void setVolume(int volume) {
 		this.volume = volume;
 	}
 
+	public String getUnit() {
+		return unit;
+	}
 
-	public String getUnit_id() {
-		return unit_id;
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
 
 
-	public void setUnit_id(String unit_id) {
-		this.unit_id = unit_id;
-	}
+
 }

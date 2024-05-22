@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DBManager {
-	public static Connection getConnection() throws SQLException{
+	public static Connection getConnection() throws SQLException {
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection con = DriverManager.getConnection(
 					"jdbc:postgresql://52.195.46.205:5432/Food_management",
 					"postgres", "postgres");
-					return con;
+			return con;
 		} catch (ClassNotFoundException e) {
 			throw new SQLException(e);
 		}
@@ -41,7 +41,5 @@ public class DBManager {
 				}
 			}
 		}
-
 	}
-
 }
