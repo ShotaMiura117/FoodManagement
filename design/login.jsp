@@ -29,20 +29,20 @@
 <body class="text-center">
 
 	<main class="form-signin">
-	<form>
+	<form action = <%=request.getContextPath() %>/login method ="Post">
 		<h1 class="h3 mb-3 fw-normal">ログイン</h1>
 
 		<div class="form-floating">
 			<input type="email" class="form-control" id="floatingInput"
-				placeholder="nana40@gmail.com"> <label for="floatingInput"><i
+				placeholder="nana40@gmail.com" name = "email"> <label for="floatingInput"><i
 				class="fa-solid fa-envelope"></i></label>
 		</div>
 		<br>
 		<div class="form-floating">
 			<input type="password" class="form-control" id="floatingPassword"
-				placeholder="Password"> <label for="floatingPassword"><i
-				class="fa-solid fa-key"></i></label> <input type="checkbox"
-				onclick="myFunction()">パスワードを表示する
+				placeholder="Password" name = "password"> <label for="floatingPassword"><i
+				class="fa-solid fa-key"></i></label>
+				<input type="checkbox" onclick="myFunction()">パスワードを表示する
 		</div>
 		<br> <a href="#">パスワードを忘れた場合</a><br> <br>
 		<button class="w-100 btn btn-lg btn-primary" type="submit">ログイン</button>
