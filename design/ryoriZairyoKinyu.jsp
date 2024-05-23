@@ -27,17 +27,25 @@
 					料理名:<input type="text" name="name"> 分:<input type="number"
 						name="time"><br> <br>
 				</div>
-				<!--<div class="but">
-					<button id="rowAdder" type="button">タグの追加</button>
-				</div>-->
+
+
 				<div id="ingredientContainer">
 					<div class="list">
-						食材: <input type="text" name="zairyo"> 数 量: <input
-							type="number" name="suryo" max="500000000" min="1"> 単位: <input
-							type="number" name="tani" max="5000000" min="1"
+						食材: <input type="text" name="zairyo" Required> 数 量: <input
+							type="number" name="suryo" max="500000000" min="0"> 単位: <input
+							type="number" name="tani" max="5000000" min="0"
 							style="font-size: smaller;">
 						<!--<button type="button" class="rowDelete">削除</button>-->
 					</div>
+					<%
+						String errorMsg = (String) request.getAttribute("errorMsg");
+						if (errorMsg == null) {
+					%>
+					<p><%=errorMsg%></p>
+					<%
+						}
+					%>
+
 
 					<div class="btn">
 						<a href="ryoriZairyoKinyu.jsp"><button type="button"
@@ -45,8 +53,9 @@
 						<button type="submit" name="hozon">料理の材料保存</button>
 					</div>
 			</form>
-		</div>
 
+
+		</div>
 		<div class="listing">
 			<%
 				ResultSet rs1 = null;
@@ -156,24 +165,8 @@
 				</TABLE>
 			</div>
 		</div>
-
-		<!--<button type="button">
-								<i class="fa-solid fa-xmark"></i>
-							</button>
-
-							<button type="button">
-								ハンバーグ <i class="fa-solid fa-xmark"></i>
-							</button> -->
-
-		<!--<div class="small_box">
-					<br>
-				<div class="link">
-						<button>
-							<a href="#">外部サイトリンク</a>
-						</button>
-					</div>
-				</div> -->
 	</div>
+
 
 	<script src="title.js"></script>
 </body>

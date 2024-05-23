@@ -1,4 +1,4 @@
-package shokuzai_detail;
+package food_management;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -44,7 +44,7 @@ public class ShokuzaiDAO {
 				+ "shokuzai.volume, shokuzai.unit_id, shokuzai.default_volume, shokuzai.shokuzai_favorite,"
 				+ "genre.genre_name, unit.unit_name from shokuzai full join genre on shokuzai.genre_id = genre.genre_id"
 				+ " right outer join unit on shokuzai.unit_id = unit.unit_id"
-				+ " where shokuzai_id = 6";
+				+ " where shokuzai_id = 5";
 
 		//		リストページと結合後、
 		//		where句をセッションから取得したshokuzai_idで指定する

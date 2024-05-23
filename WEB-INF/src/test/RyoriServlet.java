@@ -21,30 +21,47 @@ public class RyoriServlet extends HttpServlet {
 		int volume = Integer.parseInt(request.getParameter("suryo"));
 		String unit = request.getParameter("tani");
 
-		response.setCharacterEncoding("Windows-31J");
 		String URL = null;
 
 		/*int volume01 = Integer.parseInt(volume);*/
+		String errorMsg = null;
 
-
-		try {
-			RyoriBean rbean = new RyoriBean(name,time,materials_name,volume,unit);
-
-			int count = RyoriDAO.insertryori(rbean);
-
-			if (count < 1) {
-				URL = "/design/error.jsp";
-			} else {
-				URL = "/design/sucess.jsp";
-			}
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-			URL = "/design/error.jsp";
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-			URL = "/design/error.jsp";
+		if (name == null || "".equals(name)) {
+			errorMsg = "名前を入力してください。";
+		} else if (materials_name == null || "".equals(materials_name)) {
+			errorMsg = "材料名を入力されてません。";
+		} else if (volume == 0) {
+			errorMsg = "数量を入力してください。";
+		} else if (unit == null || "".equals(unit)) {
+			errorMsg = "単位を入力してください";
 		}
-		request.getRequestDispatcher(URL).forward(request, response);
+
+		if (errorMsg == null) {
+			try {
+				RyoriBean rbean = new RyoriBean(name, time, materials_name, volume, unit);
+
+				int count = RyoriDAO.insertryori(rbean);
+
+				if (count < 1) {
+					URL = "/design/error.jsp";
+				} else {
+					URL = "/design/sucess.jsp";
+				}
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+				URL = "/design/error.jsp";
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+				URL = "/design/error.jsp";
+			}
+			request.getRequestDispatcher(URL).forward(request, response);
+
+		} else {
+			request.setAttribute("errorMsg", errorMsg);
+			request.getRequestDispatcher("/design/ryoriZairyoKinyu.jsp").forward(request, response);
+			return; // Stop further execution
+		}
 	}
+
 }

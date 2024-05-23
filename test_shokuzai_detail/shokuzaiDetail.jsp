@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
 <%@ page import="java.util.*"%>
-<%@ page import="shokuzai_detail.*"%>
+<%@ page import="food_management.*"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>食品詳細ページ</title>
 <link rel="stylesheet" href="design/syouhinsyousai.css" type="text/css">
-</head>
+ </head>
 <body>
 	<h1 class="top_title">商品詳細</h1>
 	<div class="but">
@@ -39,6 +39,10 @@
 					<tr>
 						<th>商品名</th>
 						<td>
+						<% if (sbean.getShokuzai_favorite() == 1) {
+						%><span>
+						★
+						</span><% }%>
 						<%=sbean.getItem_name()%>
 						</td>
 					</tr>

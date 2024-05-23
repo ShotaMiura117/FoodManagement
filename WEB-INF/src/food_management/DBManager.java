@@ -1,4 +1,4 @@
-package shokuzai_detail;
+package food_management;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package shokuzai_detail;
+package food_management;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
