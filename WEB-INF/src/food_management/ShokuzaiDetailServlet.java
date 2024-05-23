@@ -1,4 +1,4 @@
-package shokuzai_detail;
+package food_management;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -39,7 +39,6 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 
 			//			ShokuzaiDetailテスト
 			forwardURL = "test_shokuzai_detail/shokuzaiDetail.jsp";
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 			forwardURL = "/test_shokuzai_detail/testerror.jsp";

@@ -32,7 +32,7 @@
 
 	<servlet>
 		<servlet-name>shokuzaiS</servlet-name>
-		<servlet-class>shokuzai_detail.ShokuzaiDetailServlet</servlet-class>
+		<servlet-class>food_management.ShokuzaiDetailServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>shokuzaiS</servlet-name>
@@ -42,7 +42,7 @@
 
 	<servlet>
 		<servlet-name>shokuzaiE</servlet-name>
-		<servlet-class>shokuzai_detail.ShokuzaiEditServlet</servlet-class>
+		<servlet-class>food_management.ShokuzaiEditServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>shokuzaiE</servlet-name>
@@ -51,7 +51,7 @@
 
 	<servlet>
 		<servlet-name>shokuzaiD</servlet-name>
-		<servlet-class>shokuzai_detail.ShokuzaiDeleteServlet</servlet-class>
+		<servlet-class>food_management.ShokuzaiDeleteServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>shokuzaiD</servlet-name>

@@ -29,6 +29,15 @@ table {
       color: black;
 
   }
+
+  span{
+	float : left;
+	color: rgb(255, 0, 0); 赤色
+
+
+  }
+
+
   .b:active{
       transform: scale(0.98);
   }
@@ -72,6 +81,7 @@ h1{
   padding: 5px 25px;
   border-radius: 10px;
 }
+
 
 
 
