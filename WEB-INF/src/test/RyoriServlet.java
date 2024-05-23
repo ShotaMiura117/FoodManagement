@@ -15,7 +15,7 @@ public class RyoriServlet extends HttpServlet {
 		request.setCharacterEncoding("Windows-31J");
 		//get values of text field
 		String name = request.getParameter("name");
-		request.setAttribute("name", name);
+		//request.setAttribute("name", name);
 		int time = Integer.parseInt(request.getParameter("time"));
 		String materials_name = request.getParameter("zairyo");
 		int volume = Integer.parseInt(request.getParameter("suryo"));
@@ -24,8 +24,11 @@ public class RyoriServlet extends HttpServlet {
 		response.setCharacterEncoding("Windows-31J");
 		String URL = null;
 
+		/*int volume01 = Integer.parseInt(volume);*/
+
+
 		try {
-			RyoriBean rbean = new RyoriBean(name,materials_name,time,volume, unit);
+			RyoriBean rbean = new RyoriBean(name,time,materials_name,volume,unit);
 
 			int count = RyoriDAO.insertryori(rbean);
 
