@@ -8,16 +8,15 @@ public class RyoriBean {
 	private String unit;
 
 
-	public RyoriBean() {
-
-	}
-
-	public RyoriBean(String name, String materials_name, int time, int volume, String unit) {
+	public RyoriBean(String name, int time, String materials_name, int volume, String unit) {
 		this.name = name;
 		this.time = time;
 		this.materials_name = materials_name;
 		this.volume = volume;
 		this.unit = unit;
+	}
+
+	public RyoriBean() {
 	}
 
 	public String getName() {

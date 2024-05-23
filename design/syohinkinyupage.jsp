@@ -22,8 +22,9 @@
                     </tr>
                     <tr>
                         <th>‹C‚É‚È‚é</th>
-                        <td><input type="hidden" name="shokuzai_favorite" value="0">
+                        <td>
                             <input type="radio" name="shokuzai_favorite" value="1" >Yes <input type="radio" name="shokuzai_favorite" value="0">No
+                            <input type="hidden" name="shokuzai_favorite" value="0">
 
                         </td>
                     </tr>
