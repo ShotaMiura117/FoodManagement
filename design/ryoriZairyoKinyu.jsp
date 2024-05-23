@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
+<%@ page import="java.util.*"%>
+<%@ page import="test.*"%>
+<%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,78 +22,159 @@
 	<div class="container">
 		<h1 class="top_title">料理の材料記入ページ</h1>
 		<div class="right_container">
-			<form action="<%= request.getContextPath() %>/ryori" method="POST">
+			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					料理名:<input type="text" name="name"> 分:<input type="time"
-						name="time">
+					料理名:<input type="text" name="name"> 分:<input type="number"
+						name="time"><br> <br>
 				</div>
-				<div class="but">
+				<!--<div class="but">
 					<button id="rowAdder" type="button">タグの追加</button>
-				</div>
-				<div class="list">
-					食材: <input type="text" name="zairyo"> 数量: <input
-						type="number" name="suryo" max="500000000" min="1"> 単位: <input
-						type="number" name="tani" max="5000000" min="1"
-						style="font-size: smaller;">
-
-					<div id="newinput"></div>
-
-					<div class="listing">
-						<ol>
-							<li>ひき肉:100g</li>
-							<li>玉ねぎ:1/2個</li>
-							<li>ピーマン:適量</li>
-							<li>人参:適量</li>
-						</ol>
+				</div>-->
+				<div id="ingredientContainer">
+					<div class="list">
+						食材: <input type="text" name="zairyo"> 数 量: <input
+							type="number" name="suryo" max="500000000" min="1"> 単位: <input
+							type="number" name="tani" max="5000000" min="1"
+							style="font-size: smaller;">
+						<!--<button type="button" class="rowDelete">削除</button>-->
 					</div>
+
 					<div class="btn">
-						<button type="button" name="cancel">キャンセル</button>
+						<a href="ryoriZairyoKinyu.jsp"><button type="button"
+								name="cancel">キャンセル</button></a>
 						<button type="submit" name="hozon">料理の材料保存</button>
 					</div>
-				</div>
 			</form>
 		</div>
 
-		<div class="left-container">
-			<div class="total">
-				<div class="box">
-					<img src="photos/momo.jpg" alt="Food_image"
-						style="width: 250px; height: 250px">
-				</div>
-				<div class="medium_box">
-					<button type="button" name="button">タグの追加</button>
-					<br> <br>
-					<button type="button">
-						肉 <i class="fa-solid fa-xmark"></i>
-					</button>
-					<button type="button">
-						ハンバーグ <i class="fa-solid fa-xmark"></i>
-					</button>
-				</div>
-				<div class="small_box">
-					<br>
-					<div class="link">
-						<button>
-							<a href="#">外部サイトリンク</a>
-						</button>
-					</div>
+		<div class="listing">
+			<%
+				ResultSet rs1 = null;
+				Connection con1 = null;
+				PreparedStatement pst = null;
 
-				</div>
-			</div>
+				try {
+					Class.forName("org.postgresql.Driver");
+					con1 = DriverManager.getConnection(
+							"jdbc:postgresql://52.195.46.205:5432/Food_management",
+							"postgres", "postgres");
+
+					String sql = "SELECT materials_name,unit FROM recipe";
+
+					pst = con1.prepareStatement(sql);
+
+					rs1 = pst.executeQuery();
+			%>
+
+			<TABLE BORDER="1">
+				<TR>
+					<TH>材料名</TH>
+					<TH>数量</TH>
+				</TR>
+				<%
+					while (rs1.next()) {
+				%>
+				<TR>
+					<TD><%=rs1.getString(1)%></td>
+					<TD><%=rs1.getString(2)%></TD>
+				</TR>
+
+				<%
+					}
+
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				%>
+			</TABLE>
 
 		</div>
 	</div>
 
-	<script type="text/javascript">
-		$("#rowAdder")
-				.click(
-						function() {
-							newRowAdd = '<div class="list">'
-									+ '食材: <input type="text name="zairyo"> '
-									+ '数量: <input type="number" name="suryo" max="500000000" min="1"> '
-									+ '単位: <input type="number" name="tani" max="500000000" min="1" style="font-size:smaller;"> ';
-							$("#newinput").append(newRowAdd);
-						});
-	</script>
+	<div class="left-container">
+		<div class="total">
+			<div class="box">
+				<div class="slideshow-container">
+					<div class="slider">
+						<img src="img/beefstew.jpg" alt="beer"
+							style="width: 250px; height: 250px">
+					</div>
+					<div class="slider">
+						<img src="img/cheesecake.jpg" alt="sasimi"
+							style="width: 250px; height: 250px">
+					</div>
+					<div class="slider">
+						<img src="img/curry_rice.jpg" alt="Ramen"
+							style="width: 250px; height: 250px">
+					</div>
+				</div>
+			</div>
+			<!--<img src="photos/momo.jpg" alt="Food_image"
+						style="width: 250px; height: 250px">
+				</div>-->
+			<div class="medium_box">
+				<!--<button id="rowAdder" type="button">タグの追加</button>-->
+				<%
+					ResultSet rs = null;
+					Connection con = null;
+					PreparedStatement pstmt = null;
+
+					try {
+						Class.forName("org.postgresql.Driver");
+						con = DriverManager.getConnection(
+								"jdbc:postgresql://52.195.46.205:5432/Food_management",
+								"postgres", "postgres");
+
+						String sql = "SELECT * FROM tag LIMIT 4";
+
+						pstmt = con.prepareStatement(sql);
+
+						rs = pstmt.executeQuery();
+				%>
+				<TABLE BORDER="1">
+					<TR>
+						<TH>ID</TH>
+						<TH>TAG_NAME</TH>
+					</TR>
+
+					<%
+						while (rs.next()) {
+					%>
+
+					<TR>
+						<TD><%=rs.getString(1)%></td>
+						<TD><%=rs.getString(2)%></TD>
+					</TR>
+
+					<%
+						}
+
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
+					%>
+				</TABLE>
+			</div>
+		</div>
+
+		<!--<button type="button">
+								<i class="fa-solid fa-xmark"></i>
+							</button>
+
+							<button type="button">
+								ハンバーグ <i class="fa-solid fa-xmark"></i>
+							</button> -->
+
+		<!--<div class="small_box">
+					<br>
+				<div class="link">
+						<button>
+							<a href="#">外部サイトリンク</a>
+						</button>
+					</div>
+				</div> -->
+	</div>
+
+	<script src="title.js"></script>
 </body>
 </html>

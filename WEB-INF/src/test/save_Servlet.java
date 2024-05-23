@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,30 +26,35 @@ public class save_Servlet extends HttpServlet {
 		int shokuzai_favorite = Integer.parseInt(request.getParameter("shokuzai_favorite"));
 		double default_volume = volume;
 
-
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
+		String URL = null;
 
 		if (materials_name == null || "".equals(materials_name) || item_name == null || "".equals(item_name)) {
 			out.print("商品名と食材名を入力してください。");
 		} else {
 			try {
 				EntryBean ebean = new EntryBean(materials_name, item_name, expiration_date, volume,
-						unit_id, quantity, genre_id, open_check, save_method, filling_date, shokuzai_favorite, default_volume);
+						unit_id, quantity, genre_id, open_check, save_method, filling_date, shokuzai_favorite,
+						default_volume);
 
 				int saveCount = EntryDAO.insert(ebean);
 
-				RequestDispatcher rd = request.getRequestDispatcher("syouhinkinyupage.jsp");
-				rd.include(request, response);
-				out.print("登録を成功しました。");
+				if (saveCount < 1) {
+					URL = "/design/tourokuError.jsp";
+				} else {
+					URL = "/design/tourokuSuccess.jsp";
+				}
+
 			} catch (NumberFormatException e) {
-				out.print("登録に失敗しました。もう一度試してください。");
 				e.printStackTrace();
+				URL = "/design/tourokuError.jsp";
 			} catch (SQLException e) {
-				out.print("登録に失敗しました。もう一度試してください。");
 				e.printStackTrace();
+				URL = "/design/tourokuError.jsp";
 
 			}
+			request.getRequestDispatcher(URL).forward(request, response);
 
 		}
 

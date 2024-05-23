@@ -5,14 +5,29 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-<servlet>
-        <servlet-name>ryoriS</servlet-name>
-        <servlet-class>test.RyoriServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ryoriS</servlet-name>
-        <url-pattern>/ryori</url-pattern>
-    </servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>timeS</servlet-name>
+		<servlet-class>test.uploadServlet</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>timeS</servlet-name>
+		<url-pattern>/time</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<servlet-name>ryoriS</servlet-name>
+		<servlet-class>test.RyoriServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ryoriS</servlet-name>
+		<url-pattern>/ryori</url-pattern>
+	</servlet-mapping>
 
 
 	<servlet>
@@ -25,15 +40,38 @@
 	</servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>shokuzaiE</servlet-name>
+		<servlet-class>shokuzai_detail.ShokuzaiEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>shokuzaiE</servlet-name>
+		<url-pattern>/shokuzaie</url-pattern>
+	</servlet-mapping>
 
-    <servlet>
-        <servlet-name>tourokuS</servlet-name>
-        <servlet-class>test.save_Servlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>tourokuS</servlet-name>
-        <url-pattern>/touroku</url-pattern>
-    </servlet-mapping>
+	<servlet>
+		<servlet-name>shokuzaiD</servlet-name>
+		<servlet-class>shokuzai_detail.ShokuzaiDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>shokuzaiD</servlet-name>
+		<url-pattern>/shokuzaid</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>tourokuS</servlet-name>
+		<servlet-class>test.save_Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tourokuS</servlet-name>
+		<url-pattern>/touroku</url-pattern>
+	</servlet-mapping>
+
+<welcome-file-list>
+    <welcome-file>ryoriZairyoKinyu.jsp</welcome-file>
+</welcome-file-list>
 
 
     <servlet>
@@ -46,5 +84,15 @@
     </servlet-mapping>
 
 
+	<servlet>
+		<servlet-name>resultS</servlet-name>
+		<servlet-class>test.ResultServlet</servlet-class>
 
-	</web-app>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>resultS</servlet-name>
+		<url-pattern>/result</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
