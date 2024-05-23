@@ -84,7 +84,7 @@
 					<input type="number" name="devolume" min="0" max="<%=sListbean.getDefaVolume()*sListbean.getQuantity()%>">
 					<%=sListbean.getUnit() %>
 					<input type="submit"value="Šm’è"></form></td>
-					 <td> <button type="button" class="btn btn-outline-success" name="delete"
+					 <td> <button type="button" class="btn btn-outline-success" name="deletes"
 					 onclick="<%=request.getContextPath() %>/deletes"value="<%=sListbean.getShokuzaiID()%>">íœ</button></td>
 				</tr>
 <%
