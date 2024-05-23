@@ -58,6 +58,14 @@
 		<url-pattern>/shokuzaid</url-pattern>
 	</servlet-mapping>
 
+		<servlet>
+		<servlet-name>createA</servlet-name>
+		<servlet-class>food_management.CreateAccountServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>creatA</servlet-name>
+		<url-pattern>/createa</url-pattern>
+	</servlet-mapping>
 
 
 	<servlet>
