@@ -7,6 +7,7 @@ public class RyoriBean {
 	private int volume;
 	private String unit;
 
+
 	public RyoriBean(String name, int time, String materials_name, int volume, String unit) {
 		this.name = name;
 		this.time = time;
