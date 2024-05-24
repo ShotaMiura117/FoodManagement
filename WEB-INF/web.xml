@@ -102,6 +102,52 @@
 		<url-pattern>/result</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>deleteS</servlet-name>
+		<servlet-class>test.DeleteRryoriServlet</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteS</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+	<servlet-name>IDBeanSetS</servlet-name>
+	<servlet-class>shokuzaiList.IDBeanSetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>IDBeanSetS</servlet-name>
+	<url-pattern>/ManagementList</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>SelectListS</servlet-name>
+	<servlet-class>shokuzaiList.SelectShokuzaiServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>SelectListS</servlet-name>
+	<url-pattern>/shokuzaiListServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>deleteS</servlet-name>
+	<servlet-class>shokuzaiList.DeleteShokuzaiServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>deleteS</servlet-name>
+	<url-pattern>/deletes</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>WrDataS</servlet-name>
+	<servlet-class>shokuzaiList.WrDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>WrDataS</servlet-name>
+	<url-pattern>/usedvolume</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 	<servlet-name>IDBeanSetS</servlet-name>

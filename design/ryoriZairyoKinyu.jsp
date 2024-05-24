@@ -24,8 +24,8 @@
 		<div class="right_container">
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					—¿—–¼:<input type="text" name="name"> •ª:<input type="number"
-						name="time"><br> <br>
+					—¿—–¼:<input type="text" name="name" Required> •ª:<input
+						type="number" name="time"><br> <br>
 				</div>
 
 
@@ -53,6 +53,18 @@
 						<button type="submit" name="hozon">—¿—‚ÌÞ—¿•Û‘¶</button>
 					</div>
 			</form>
+			<form action="<%=request.getContextPath()%>/delete" method="GET">
+				<input type="text" name="name">
+				<button type="submit" value="Delete">íœ</button>
+			</form>
+			<%
+				String msg = (String) request.getAttribute("msg");
+				if (msg != null) {
+			%>
+			<p><%=msg%></p>
+			<%
+				}
+			%>
 
 
 		</div>
