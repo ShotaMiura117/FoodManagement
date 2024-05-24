@@ -1,6 +1,10 @@
 package test;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -15,36 +19,42 @@ public class Delete_Servlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("Windows-31j");
 
+		PrintWriter out = response.getWriter();
 		String name = request.getParameter("name");
+		String errorMsg = null;
+		String URL = null;
 
-		//String forwardURL = null;
-		String msg = null;
-		if ("".equals(name) || name == null) {
-			msg = "何も入力してないです。";
-		}
+		if (name != null && !name.isEmpty()) {
+			Connection con1 = null;
+			PreparedStatement pst = null;
 
-		if (msg == null) {
 			try {
-				int updateCount = RyoriDAO.deleteRyoriByName(name);
+				Class.forName("org.postgresql.Driver");
+				con1 = DriverManager.getConnection(
+						"jdbc:postgresql://52.195.46.205:5432/Food_management",
+						"postgres", "postgres");
 
-				if (updateCount < 1) {
-					msg = "削除失敗しました";
+				String sql = "DELETE FROM recipe WHERE name = ?";
+				pst = con1.prepareStatement(sql);
+				pst.setString(1, name);
+
+				int rowsAffected = pst.executeUpdate();
+				if (rowsAffected > 0) {
+					URL = "/design/RyoriDeleteSuccess.jsp";
+					out.print("Your data has been deleted");
 				} else {
-					msg = name + "削除しました.";
+					URL = "/design/RyoriDeleteUnsuccess.jsp";
+					out.print("No data found with the given name");
 				}
-			} catch (NumberFormatException e) {
-				e.printStackTrace();
 
-			} catch (SQLException e) {
-				e.printStackTrace();
-
+			} catch (SQLException | ClassNotFoundException e) {
+				out.print("Error: " + e.toString());
 			}
-			//request.getRequestDispatcher(forwardURL).forward(request, response);
 		} else {
-			request.setAttribute("msg", msg);
-			request.getRequestDispatcher("/design/ryoriZairyoKinyu.jsp").forward(request, response);
-			return; // Stop further execution
+			errorMsg = "未入力です。";
+			request.setAttribute("errorMsg", errorMsg);
 		}
-	}
+		request.getRequestDispatcher(URL).forward(request, response);
 
+	}
 }

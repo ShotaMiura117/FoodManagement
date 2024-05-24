@@ -15,11 +15,4 @@ public class RyoriDAO {
 		return DBManager.simpleUpdate(sql);
 	}
 
-	//Delete the food by name
-	public static int deleteRyoriByName(String name) throws SQLException {
-		String sql = "DELETE from rbean where name = ? ";
-
-		return DBManager.simpleUpdate(sql);
-
-	}
 }

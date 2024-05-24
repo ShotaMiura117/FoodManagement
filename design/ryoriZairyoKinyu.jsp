@@ -25,15 +25,15 @@
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
 					—¿—–¼:<input type="text" name="name" Required> •ª:<input
-						type="number" name="time"><br> <br>
+						type="number" name="time" Required><br> <br>
 				</div>
 
 
 				<div id="ingredientContainer">
 					<div class="list">
 						HÞ: <input type="text" name="zairyo" Required> ” —Ê: <input
-							type="number" name="suryo" max="500000000" min="0"> ’PˆÊ: <input
-							type="number" name="tani" max="5000000" min="0"
+							type="number" name="suryo" max="500000000" min="0" Required> ’PˆÊ: <input
+							type="number" name="tani" max="5000000" min="0" Required
 							style="font-size: smaller;">
 						<!--<button type="button" class="rowDelete">íœ</button>-->
 					</div>
@@ -54,9 +54,9 @@
 					</div>
 			</form>
 			<form action="<%=request.getContextPath()%>/remove" method="POST">
-				Name:<input type="text" name="name">
+				Name:<input type="text" name="name" required>
 				<%
-					String msg = (String) request.getAttribute("msg");
+					String msg = (String) request.getAttribute("errorMsg");
 					if (msg != null) {
 				%>
 				<p><%=msg%></p>
