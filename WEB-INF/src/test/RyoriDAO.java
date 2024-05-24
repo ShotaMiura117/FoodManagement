@@ -16,8 +16,8 @@ public class RyoriDAO {
 	}
 
 	//Delete the food by name
-	public static int deleteRyoriById(String name) throws SQLException {
-		String sql = "DELETE from recipe where name = '" + name + "'";
+	public static int deleteRyoriByName(String name) throws SQLException {
+		String sql = "DELETE from rbean where name = ? ";
 
 		return DBManager.simpleUpdate(sql);
 

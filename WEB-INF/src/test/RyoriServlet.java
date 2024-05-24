@@ -59,7 +59,7 @@ public class RyoriServlet extends HttpServlet {
 
 		} else {
 			request.setAttribute("errorMsg", errorMsg);
-			request.getRequestDispatcher("/design/ryoriZairyoKinyu.jsp").forward(request, response);
+			//request.getRequestDispatcher("ryoriZairyoKinyu.jsp").forward(request, response);
 			return; // Stop further execution
 		}
 	}

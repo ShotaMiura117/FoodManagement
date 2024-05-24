@@ -39,7 +39,7 @@
 					</div>
 					<%
 						String errorMsg = (String) request.getAttribute("errorMsg");
-						if (errorMsg == null) {
+						if (errorMsg != null) {
 					%>
 					<p><%=errorMsg%></p>
 					<%
@@ -53,18 +53,19 @@
 						<button type="submit" name="hozon">—¿—‚ÌŞ—¿•Û‘¶</button>
 					</div>
 			</form>
-			<form action="<%=request.getContextPath()%>/delete" method="GET">
-				<input type="text" name="name">
-				<button type="submit" value="Delete">íœ</button>
+			<form action="<%=request.getContextPath()%>/remove" method="POST">
+				Name:<input type="text" name="name">
+				<%
+					String msg = (String) request.getAttribute("msg");
+					if (msg != null) {
+				%>
+				<p><%=msg%></p>
+				<%
+					}
+				%>
+				<button type="submit" >íœ</button>
 			</form>
-			<%
-				String msg = (String) request.getAttribute("msg");
-				if (msg != null) {
-			%>
-			<p><%=msg%></p>
-			<%
-				}
-			%>
+
 
 
 		</div>
@@ -80,7 +81,7 @@
 							"jdbc:postgresql://52.195.46.205:5432/Food_management",
 							"postgres", "postgres");
 
-					String sql = "SELECT materials_name,unit FROM recipe";
+					String sql = "SELECT materials_name,volume FROM recipe";
 
 					pst = con1.prepareStatement(sql);
 
