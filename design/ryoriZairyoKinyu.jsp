@@ -33,7 +33,7 @@
 					<div class="list">
 						HÞ: <input type="text" name="zairyo" Required> ” —Ê: <input
 							type="number" name="suryo" max="500000000" min="0" Required> ’PˆÊ: <input
-							type="number" name="tani" max="5000000" min="0" Required
+							type="number" name="tani" max="3" min="1" Required
 							style="font-size: smaller;">
 						<!--<button type="button" class="rowDelete">íœ</button>-->
 					</div>
@@ -59,7 +59,7 @@
 					String msg = (String) request.getAttribute("errorMsg");
 					if (msg != null) {
 				%>
-				<p><%=msg%></p>
+				<p><%= msg %></p>
 				<%
 					}
 				%>
