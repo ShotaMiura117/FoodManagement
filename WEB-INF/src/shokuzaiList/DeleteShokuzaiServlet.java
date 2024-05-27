@@ -14,16 +14,16 @@ throws ServletException,IOException{
 
 	String forwardURL=null;
 	try {
-	String DSID =request.getParameter("DeleteSID");
+	String DSID =request.getParameter("deletes");
 	DeleteShokuzaiBean dsbean =new DeleteShokuzaiBean
 			(Integer.parseInt(DSID));
 
 		ShokuzaiListDAO.delete(dsbean);
-		forwardURL="/shokuzaiList";
+		forwardURL="/sList";
 	} catch (SQLException e) {
 
 		e.printStackTrace();
-		forwardURL="/ShokuzaiListerror.jsp";
+		forwardURL="/shokuzaiListtest/listerror.jsp";
 	}
 	request.getRequestDispatcher(forwardURL).forward(request,response);
 

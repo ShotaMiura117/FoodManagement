@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
         // ���͏���\�������Ċm�F
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
-		//out.println("���O�C�����܂���<br>");
+		out.println("���O�C�����܂���<br>");
 		//out.println("���͂��ꂽ����\�����܂�<br>");
 		out.println("ID : " + id + "    PASSWORD : " + password);
 

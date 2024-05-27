@@ -15,7 +15,7 @@ public class DBManager {
 			Class.forName("org.postgresql.Driver");
 			Connection con= DriverManager.getConnection(
 					//"jdbc:postgresql://localhost:5432/serversidedb",
-					"jdbc:postgresql://52.195.46.205/sample_db",
+					"jdbc:postgresql://52.195.46.205/Food_management",
 					"postgres","postgres");
 			return con;
 		}catch(ClassNotFoundException e) {
