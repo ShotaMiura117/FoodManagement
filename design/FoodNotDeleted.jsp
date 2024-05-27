@@ -10,7 +10,7 @@
 <body>
     <h2 style="color:red">データの削除が失敗しました。</h2>
       <br>
-    <a href="/design/ryoriZairyoKinyu.jsp">材料記入へ</a>
+   <a  href="<%= request.getContextPath() %>/design/ryoriZairyoKinyu.jsp">材料記入へ</a>
 
 </body>
 </html>
