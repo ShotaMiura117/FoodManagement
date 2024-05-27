@@ -39,10 +39,10 @@ public class Delete_Servlet extends HttpServlet {
 
 				int rowsAffected = pst.executeUpdate();
 				if (rowsAffected > 0) {
-					URL = "/design/RyoriDeleteSuccess.jsp";
+					URL = "/design/FoodDelete.jsp";
 					out.print("Your data has been deleted");
 				} else {
-					URL = "/design/RyoriDeleteUnsuccess.jsp";
+					URL = "/design/FoodNotDeleted.jsp";
 					out.print("No data found with the given name");
 				}
 
