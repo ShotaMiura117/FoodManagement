@@ -24,22 +24,22 @@
 		<div class="right_container">
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					—¿—–¼:<input type="text" name="name"> •ª:<input type="number"
-						name="time"><br> <br>
+					—¿—–¼:<input type="text" name="name" Required> •ª:<input
+						type="number" name="time" Required><br> <br>
 				</div>
 
 
 				<div id="ingredientContainer">
 					<div class="list">
 						HŞ: <input type="text" name="zairyo" Required> ” —Ê: <input
-							type="number" name="suryo" max="500000000" min="0"> ’PˆÊ: <input
-							type="number" name="tani" max="5000000" min="0"
+							type="number" name="suryo" max="500000000" min="0" Required> ’PˆÊ: <input
+							type="number" name="tani" max="3" min="1" Required
 							style="font-size: smaller;">
 						<!--<button type="button" class="rowDelete">íœ</button>-->
 					</div>
 					<%
 						String errorMsg = (String) request.getAttribute("errorMsg");
-						if (errorMsg == null) {
+						if (errorMsg != null) {
 					%>
 					<p><%=errorMsg%></p>
 					<%
@@ -53,6 +53,19 @@
 						<button type="submit" name="hozon">—¿—‚ÌŞ—¿•Û‘¶</button>
 					</div>
 			</form>
+			<form action="<%=request.getContextPath()%>/remove" method="POST">
+				Name:<input type="text" name="name" required>
+				<%
+					String msg = (String) request.getAttribute("errorMsg");
+					if (msg != null) {
+				%>
+				<p><%= msg %></p>
+				<%
+					}
+				%>
+				<button type="submit" >íœ</button>
+			</form>
+
 
 
 		</div>
@@ -68,7 +81,7 @@
 							"jdbc:postgresql://52.195.46.205:5432/Food_management",
 							"postgres", "postgres");
 
-					String sql = "SELECT materials_name,unit FROM recipe";
+					String sql = "SELECT materials_name,volume FROM recipe";
 
 					pst = con1.prepareStatement(sql);
 

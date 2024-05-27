@@ -11,6 +11,5 @@
 <br>
 <a href="<%= request.getContextPath() %>/design/ryoriZairyoKinyu.jsp">料理記入ページへ</a>
 
-
 </body>
 </html>

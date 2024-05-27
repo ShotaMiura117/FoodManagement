@@ -1,7 +1,6 @@
 package test;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class RyoriDAO {
 	public static int insertryori(RyoriBean rbean) throws SQLException {
@@ -16,8 +15,4 @@ public class RyoriDAO {
 		return DBManager.simpleUpdate(sql);
 	}
 
-	public static List<RyoriBean> getRyoriList() throws SQLException{
-		String sql = "SELECT name,time,materials_name,volume, unit FROM recipe";
-		return DBManager.findAll(sql, new RyoriBeanMapping());
-	}
 }
