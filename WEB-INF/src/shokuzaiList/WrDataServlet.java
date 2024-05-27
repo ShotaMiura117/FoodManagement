@@ -15,21 +15,19 @@ throws ServletException,IOException{
 
 	String deVolume=request.getParameter("devolume");
 	String deID=request.getParameter("devoSID");
-	int sdid=Integer.parseInt(deID);
-	int sdvolume = Integer.parseInt(deVolume);
 	WrDataBean wrdatabean=new WrDataBean();
-			wrdatabean.setWVolume(sdvolume);
-			wrdatabean.setWShokuzaiID(sdid);
+			wrdatabean.setWVolume(deVolume);
+			wrdatabean.setWShokuzaiID(deID);
 			String forwardURL=null;
 			try {
 			ShokuzaiListDAO.decrease(wrdatabean);
-			forwardURL="/ManagementList";
+			forwardURL="/sList";
 			}catch(NumberFormatException e) {e.printStackTrace();
 			e.printStackTrace();
-			forwardURL="/ManagementList";
+			forwardURL="//sList";
 			}catch(SQLException e) {e.printStackTrace();
 			e.printStackTrace();
-			forwardURL="/ManagementList";
+			forwardURL="//sList";
 			}
 			request.getRequestDispatcher(forwardURL).forward(request,response);
 }
