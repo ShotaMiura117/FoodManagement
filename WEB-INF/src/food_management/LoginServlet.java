@@ -1,6 +1,8 @@
 package food_management;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,17 +17,17 @@ public class LoginServlet extends HttpServlet {
         String id = request.getParameter("email");
         String password = request.getParameter("password");
 
-        // “ü—Íî•ñ‚ğ•\¦‚³‚¹‚ÄŠm”F
+        // ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄŠmï¿½F
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
-		out.println("ƒƒOƒCƒ“‚µ‚Ü‚µ‚½<br>");
-		out.println("“ü—Í‚³‚ê‚½î•ñ‚ğ•\¦‚µ‚Ü‚·<br>");
+		//out.println("ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½<br>");
+		//out.println("ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½<br>");
 		out.println("ID : " + id + "    PASSWORD : " + password);
 
 		response.sendRedirect("design/failure.jsp");
 
 
-        // “ü—Í‚³‚ê‚½id‚ÆƒpƒXƒ[ƒh‚ğŒŸØ‚·‚é
+        // ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ê‚½idï¿½Æƒpï¿½Xï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½Ø‚ï¿½ï¿½ï¿½
         /*
         if ("admin".equals(id) && "admin".equals(password))
         {
@@ -57,8 +59,8 @@ public class LoginServlet extends HttpServlet
 
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
-		out.println("ƒƒOƒCƒ“‚µ‚Ü‚µ‚½<br>");
-		out.println("“ü—Í‚³‚ê‚½î•ñ‚ğ•\¦‚µ‚Ü‚·<br>");
+		out.println("ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½<br>");
+		out.println("ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½<br>");
 		out.println("ID : " + id + "    PASSWORD : " + password);
 
 

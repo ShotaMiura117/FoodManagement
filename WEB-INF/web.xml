@@ -7,7 +7,7 @@
 
 
 
-	<servlet>
+<!-- 	<servlet>
 		<servlet-name>timeS</servlet-name>
 		<servlet-class>test.uploadServlet</servlet-class>
 
@@ -15,7 +15,7 @@
 	<servlet-mapping>
 		<servlet-name>timeS</servlet-name>
 		<url-pattern>/time</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 
 
@@ -63,7 +63,7 @@
 		<servlet-class>food_management.CreateAccountServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>creatA</servlet-name>
+		<servlet-name>createA</servlet-name>
 		<url-pattern>/createa</url-pattern>
 	</servlet-mapping>
 
@@ -77,9 +77,9 @@
 		<url-pattern>/touroku</url-pattern>
 	</servlet-mapping>
 
-<welcome-file-list>
+<!-- <welcome-file-list>
     <welcome-file>ryoriZairyoKinyu.jsp</welcome-file>
-</welcome-file-list>
+</welcome-file-list> -->
 
 
     <servlet>
@@ -105,21 +105,21 @@
 
 	<servlet>
 	<servlet-name>IDBeanSetS</servlet-name>
-	<servlet-class>shokuzaiList.IDBeanSetServlet</servlet-class>
+	<servlet-class>shokuzaiList.IDBeanServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>IDBeanSetS</servlet-name>
 	<url-pattern>/ManagementList</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
+<!-- 	<servlet>
 	<servlet-name>SelectListS</servlet-name>
 	<servlet-class>shokuzaiList.SelectShokuzaiServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>SelectListS</servlet-name>
 	<url-pattern>/shokuzaiListServlet</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 	<servlet>
 	<servlet-name>deleteS</servlet-name>

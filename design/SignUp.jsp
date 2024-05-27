@@ -25,21 +25,29 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form>
-          <h1 class="h3 mb-3 fw-normal">新規アカウント作成</h1>
-            <div class="form-floating">
-                <input type="email" name="user_id" class="form-control" id="floatingInput" placeholder="nana40@gmail.com">
-                    <label for="floatingInput"><i class="fa-solid fa-envelope"></i></label>
-            </div><br>
-            <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword"><i class="fa-solid fa-key"></i></label>
-            <input type="checkbox" onclick="myFunction()">パスワード見る
-            </div><br>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">登録</button><br><br>
-        </form>
+<!--         <form> -->
+		<form action="<%=request.getContextPath()%>/createa" method="POST">
 
+			<h1 class="h3 mb-3 fw-normal">新規アカウント作成</h1>
+			<div class="form-floating">
+				<input type="email" name="user_id" class="form-control"
+					id="floatingInput" placeholder="nana40@gmail.com"> <label
+					for="floatingInput"><i class="fa-solid fa-envelope"></i></label>
+			</div>
+			<br>
+			<div class="form-floating">
+				<input type="password" name="password" class="form-control"
+					id="floatingPassword" placeholder="Password"> <label
+					for="floatingPassword"><i class="fa-solid fa-key"></i></label> <input
+					type="checkbox" onclick="myFunction()">パスワード見る
+			</div>
+			<br>
+			<button class="w-100 btn btn-lg btn-primary" type="submit"
+			onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/createAccount.jsp'"
+			>登録</button>
+			<br>
+			<br>
 
-    </main>
+		</form></main>
 </body>
 </html>
