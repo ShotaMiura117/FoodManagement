@@ -192,11 +192,11 @@ function checkForm() {
 							ƒLƒƒƒ“ƒZƒ‹</button>
 						<br> <br>
 						<button type="submit" class="btn"
-							onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/shokuzaiEdit.jsp'">
+							onclick="location.href='<%=request.getContextPath()%>/shokuzaie">
 							•Û‘¶</button>
+
 					</div>
 				</form>
-				<div id="selectErrorMessage" style="color: red;"></div>
 			</div>
 		</div>
 	</div>
