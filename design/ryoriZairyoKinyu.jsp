@@ -80,7 +80,7 @@
 							"jdbc:postgresql://52.195.46.205:5432/Food_management",
 							"postgres", "postgres");
 
-					String sql = "SELECT materials_name,volume FROM recipe";
+					String sql = "SELECT materials_name,volume FROM recipe LIMIT 15";
 
 					pst = con1.prepareStatement(sql);
 
@@ -145,7 +145,7 @@
 								"jdbc:postgresql://52.195.46.205:5432/Food_management",
 								"postgres", "postgres");
 
-						String sql = "SELECT * FROM tag LIMIT 8";
+						String sql = "SELECT * FROM tag LIMIT 10";
 
 						pstmt = con.prepareStatement(sql);
 
