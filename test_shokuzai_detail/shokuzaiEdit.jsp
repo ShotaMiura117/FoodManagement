@@ -105,7 +105,7 @@ function checkForm() {
 								value="<%=session.getAttribute("item_name")%>" name="item_name"></td>
 						</tr>
 						<tr>
-							<th>気になる</th>
+							<th>お気に入り</th>
 							<td><input type="radio" name="favorite" value="1">Yes
 								<input type="radio" name="favorite" value="0">No
 								<input type="hidden" name="favorite" value="0"></td>
@@ -192,11 +192,11 @@ function checkForm() {
 							キャンセル</button>
 						<br> <br>
 						<button type="submit" class="btn"
-							onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/shokuzaiEdit.jsp'">
+							onclick="location.href='<%=request.getContextPath()%>/shokuzaie">
 							保存</button>
+
 					</div>
 				</form>
-				<div id="selectErrorMessage" style="color: red;"></div>
 			</div>
 		</div>
 	</div>

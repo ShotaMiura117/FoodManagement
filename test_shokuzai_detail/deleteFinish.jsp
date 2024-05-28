@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>食材データの削除が完了しました。</h1>
-<a href="<%=request.getContextPath() %>/test_shokuzai_detail/testshokuzaitop.jsp">食品テストトップへ</a><br/>
+<a href="<%=request.getContextPath() %>/test_shokuzai_detail/testshokuzaitop.jsp">食品リストページへ</a><br/>
 
 </body>
 </html>

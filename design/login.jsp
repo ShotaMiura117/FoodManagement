@@ -34,13 +34,13 @@
 
 		<div class="form-floating">
 			<input type="email" class="form-control" id="floatingInput"
-				placeholder="nana40@gmail.com" name = "email"> <label for="floatingInput"><i
+				placeholder="nana40@gmail.com" name = "email" required> <label for="floatingInput"><i
 				class="fa-solid fa-envelope"></i></label>
 		</div>
 		<br>
 		<div class="form-floating">
 			<input type="password" class="form-control" id="floatingPassword"
-				placeholder="Password" name = "password"> <label for="floatingPassword"><i
+				placeholder="Password" name = "password" required> <label for="floatingPassword"><i
 				class="fa-solid fa-key"></i></label>
 				<input type="checkbox" onclick="myFunction()">パスワードを表示する
 		</div>
@@ -49,8 +49,11 @@
 		<br> <br>
 	</form>
 	<div class="flex-container">
-		<a href="SignUp.jsp">新規アカウント登録</a>
-	</div>
+ 		<a href="SignUp.jsp">新規アカウント登録</a>
+
+<!-- ↓ユーザー名被り確認（未実装） -->
+<%--   		<a href="<%=request.getContextPath()%>/createa">新規アカウント登録</a>
+ --%> 	</div>
 
 
 	</main>

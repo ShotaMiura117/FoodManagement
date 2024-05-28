@@ -50,6 +50,39 @@ public class DBManager {
 		}
 	}
 
+	public static <T> List<T> findAll(String sql, ResultSetBeanMapping<T> mapping)
+			throws SQLException {
+		Connection con = null;
+		Statement smt = null;
+		try {
+			con = getConnection();
+			smt = con.createStatement();
+			ResultSet rs = smt.executeQuery(sql);
+
+			List<T> list = new ArrayList<T>();
+			while (rs.next()) {
+				T bean = mapping.createFromResultSet(rs);
+				list.add(bean);
+			}
+			return list;
+		} finally {
+			if (smt != null) {
+				try {
+					smt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
 	public static <T> List<T> findAll(String sql, RyoriSetBeanMapping<T> mapping)
 			throws SQLException {
 		Connection con = null;

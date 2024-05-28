@@ -2,6 +2,7 @@ package food_management;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,33 +21,48 @@ public class CreateAccountServlet extends HttpServlet {
 		String user_id = request.getParameter("user_id");
 		String password = request.getParameter("password");
 
-//		アカウント作成毎にpk_idが+1されるようにする
-//		pk_id(主キー)はinsertすると勝手に+1される
-//		サーブレット側で処理する必要は無い
-
-
-
-//		session（またはアプリケーションスコープ）にpk_idを入れてアカウント作成時に初期値として代入
 
 		String forwardURL = null;
+		boolean id_check = true;
 
-		//		beanに登録
 		try {
+			List<AccountBean> accountList = CreateAccountDAO.getAccountList();
+
+//			ユーザー名が一致していたらfalse
+			for (int i = 0; i < accountList.size(); i++) {
+				AccountBean abean = accountList.get(i);
+
+				if (abean.getUser_id().equals(user_id)) {
+					System.out.println("id一致：" + abean.getUser_id());
+					id_check = false;
+					break;
+				}
+			}
+
+//			id_checkがtrueならcabeanを作ってアカウント登録
+
+			if (id_check) {
 			CreateAccountBean cabean = new CreateAccountBean(user_id, password);
 
 			int updateCount = CreateAccountDAO.insert(cabean);
 
-			if (updateCount < 1) {
-				forwardURL = "/test_shokuzai_detail/createError.jsp";
-				System.out.println("アカウントを作成できませんでした");
+				if (updateCount < 1) {
+					forwardURL = "/test_shokuzai_detail/createError.jsp";
+					System.out.println("アカウントを作成できませんでした");
+
+					} else {
+						forwardURL = "/test_shokuzai_detail/createAccount.jsp";
+						System.out.println("アカウントを作成しました");
+						}
 
 			} else {
-				forwardURL = "/test_shokuzai_detail/createAccount.jsp";
-				System.out.println("アカウントを作成しました");			}
+				forwardURL = "/test_shokuzai_detail/checkID.jsp";
+				System.out.println("既に使用されているユーザー名です。");
+			}
+
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 			forwardURL = "/test_shokuzai_detail/createError.jsp";
-			System.out.println("なんばーえくせぷしょん");
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="design/syouhinsyousai.css" type="text/css">
  </head>
 <body>
-	<h1 class="top_title">商品詳細</h1>
+	<h1 class="top_title">食品詳細</h1>
 	<div class="but">
 		<button
 			<%-- 正しいURL
@@ -22,7 +22,7 @@
 
 
 			onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/testshokuzaitop.jsp'">
-			テストトップに戻る</button>
+			食品リストに戻る</button>
 	</div>
 	<div class="container">
 		<div class="table">
