@@ -21,13 +21,15 @@ throws ServletException,IOException{
 			String forwardURL=null;
 			try {
 			ShokuzaiListDAO.decrease(wrdatabean);
-			forwardURL="/sList";
+			forwardURL="/ManagementList";
 			}catch(NumberFormatException e) {e.printStackTrace();
 			e.printStackTrace();
-			forwardURL="//sList";
+			forwardURL="/ManagementList";
 			}catch(SQLException e) {e.printStackTrace();
 			e.printStackTrace();
-			forwardURL="//sList";
+			forwardURL="/ManagementList";
+			}catch(NullPointerException e) {e.printStackTrace();
+			forwardURL="/ManagementList";
 			}
 			request.getRequestDispatcher(forwardURL).forward(request,response);
 }

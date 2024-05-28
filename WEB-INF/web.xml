@@ -15,14 +15,14 @@
 		<url-pattern>/remove</url-pattern>
 	</servlet-mapping>
 
-<!-- 	<servlet>
+ 	<servlet>
 		<servlet-name>timeS</servlet-name>
 		<servlet-class>test.uploadServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>timeS</servlet-name>
 		<url-pattern>/time</url-pattern>
-	</servlet-mapping> -->
+	</servlet-mapping>
 
 
 
@@ -110,57 +110,59 @@
 	</servlet-mapping>
 
 
-	<servlet>
-		<servlet-name>IDBeanSetS</servlet-name>
-		<servlet-class>shokuzaiList.IDBeanSetServlet</servlet-class>
+<servlet>
+	<servlet-name>sListS</servlet-name>
+	<servlet-class>shokuzaiList.ShokuzaiListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>IDBeanSetS</servlet-name>
-		<url-pattern>/ManagementList</url-pattern>
+	<servlet-name>sListS</servlet-name>
+	<url-pattern>/ManagementList</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>SelectListS</servlet-name>
-		<servlet-class>shokuzaiList.SelectShokuzaiServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SelectListS</servlet-name>
-		<url-pattern>/shokuzaiListServlet</url-pattern>
-	</servlet-mapping>
-	<!-- <servlet> <servlet-name>deleteS</servlet-name> <servlet-class>shokuzaiList.DeleteShokuzaiServlet</servlet-class>
-		</servlet> <servlet-mapping> <servlet-name>deleteS</servlet-name> <url-pattern>/deletes</url-pattern>
-		</servlet-mapping> -->
-
-	<servlet>
-		<servlet-name>WrDataS</servlet-name>
-		<servlet-class>shokuzaiList.WrDataServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>WrDataS</servlet-name>
-		<url-pattern>/usedvolume</url-pattern>
-	</servlet-mapping>
-
-	<!-- <servlet> <servlet-name>IDBeanSetS</servlet-name> <servlet-class>shokuzaiList.IDBeanSetServlet</servlet-class>
-		</servlet> <servlet-mapping> <servlet-name>IDBeanSetS</servlet-name> <url-pattern>/ManagementList</url-pattern>
-		</servlet-mapping> -->
-	<!-- <servlet> <servlet-name>SelectListS</servlet-name> <servlet-class>shokuzaiList.SelectShokuzaiServlet</servlet-class>
-		</servlet> <servlet-mapping> <servlet-name>SelectListS</servlet-name> <url-pattern>/shokuzaiListServlet</url-pattern>
-		</servlet-mapping> -->
-
-	<!--<servlet> <servlet-name>deleteS</servlet-name> <servlet-class>shokuzaiList.DeleteShokuzaiServlet</servlet-class>
-		</servlet> <servlet-mapping> <servlet-name>deleteS</servlet-name> <url-pattern>/deletes</url-pattern>
-		</servlet-mapping> -->
-	<!-- <servlet> <servlet-name>WrDataS</servlet-name> <servlet-class>shokuzaiList.WrDataServlet</servlet-class>
-		</servlet> <servlet-mapping> <servlet-name>WrDataS</servlet-name> <url-pattern>/usedvolume</url-pattern>
-		</servlet-mapping> -->
 
 
 	<servlet>
-	<servlet-name>TestS</servlet-name>
-	<servlet-class>shokuzaiList.TestServlet</servlet-class>
+	<servlet-name>SelectListS</servlet-name>
+	<servlet-class>shokuzaiList.SelectListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>TestS</servlet-name>
-	<url-pattern>/test</url-pattern>
+	<servlet-name>SelectListS</servlet-name>
+	<url-pattern>/SelectList</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>deleteS</servlet-name>
+	<servlet-class>shokuzaiList.DeleteShokuzaiServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>deleteS</servlet-name>
+	<url-pattern>/deletes</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>WrDataS</servlet-name>
+	<servlet-class>shokuzaiList.WrDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>WrDataS</servlet-name>
+	<url-pattern>/usedvolume</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>logoutS</servlet-name>
+	<servlet-class>shokuzaiList.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>logoutS</servlet-name>
+	<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>testS</servlet-name>
+	<servlet-class>shokuzaiList.TESTServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>testS</servlet-name>
+	<url-pattern>/TEST</url-pattern>
+	</servlet-mapping>
+
 </web-app>

@@ -6,16 +6,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import shokuzaiList.IDBean;
+import javax.servlet.http.HttpSession;
 
-	public class IDBeanSetServlet extends HttpServlet{
-		public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public class TESTServlet extends HttpServlet{
+		public void doPost(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException,IOException{
 
 			HttpSession session=request.getSession();
-			session.setAttribute("1");
+			session.setAttribute("login_key", (long) 1);
 
 
-			request.getRequestDispatcher(/FoodManagement).forward(request, response);
+			request.getRequestDispatcher("/ManagementList").forward(request, response);
 		}
 }

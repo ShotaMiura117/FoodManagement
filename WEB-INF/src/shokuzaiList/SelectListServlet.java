@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class SelectListServlet extends HttpServlet {
-	public void doGet(HttpServletRequest request,HttpServletResponse response)
+	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	throws ServletException,IOException{
 
 
@@ -17,19 +17,17 @@ public class SelectListServlet extends HttpServlet {
 
 		String forwardURL=null;
 
-		String[] selectShokuzai =request.getParameterValues("selectS");
+		String[] sShokuzai =request.getParameterValues("selectShokuzai");
 
 		SelectShokuzaiBean selects=new SelectShokuzaiBean();
 
-		if(selectShokuzai != null){
-			for(int i = 0;i<selectShokuzai.length;i++) {
-				selects.setSelectShokuzai(selectShokuzai[i]);
-			}
-
-		session.setAttribute("selectShokuzai",selectShokuzai);
-		forwardURL="/FoodToDish.jsp";
+		if(sShokuzai != null){
+			String selShokuzai= String.join (", ",sShokuzai);
+			selects.setSelectShokuzai(selShokuzai);
+		session.setAttribute("selects",selects);
+		forwardURL="/shokuzaiListtest/FoodList.jsp";
 		}else {
-		forwardURL="/ManegementList";
+		forwardURL="/ManagementList";
 		}
 		request.getRequestDispatcher(forwardURL).forward(request, response);
 	}
