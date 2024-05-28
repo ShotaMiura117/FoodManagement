@@ -1,4 +1,4 @@
-package food_management;
+package shokuzai_detail;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -7,6 +7,14 @@ public class ShokuzaiDAO {
 
 	public static int insert(ShokuzaiEditBean sebean) throws SQLException {
 
+//		賞味期限を記入必須にするなら18行目までの処理は消して良い
+//		String expiration_date;
+//		if (sebean.getExpiration_date().equals("null")) {
+//			expiration_date = null;
+//		} else {
+//			expiration_date = sebean.getExpiration_date();
+//		}
+//		expiration_date = sebean.getExpiration_date();
 
 
 		//		食材テーブルを更新
@@ -36,7 +44,7 @@ public class ShokuzaiDAO {
 				+ "shokuzai.volume, shokuzai.unit_id, shokuzai.default_volume, shokuzai.shokuzai_favorite,"
 				+ "genre.genre_name, unit.unit_name from shokuzai full join genre on shokuzai.genre_id = genre.genre_id"
 				+ " right outer join unit on shokuzai.unit_id = unit.unit_id"
-				+ " where shokuzai_id = 5";
+				+ " where shokuzai_id = 123";
 
 		//		リストページと結合後、
 		//		where句をセッションから取得したshokuzai_idで指定する

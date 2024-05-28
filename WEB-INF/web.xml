@@ -15,14 +15,14 @@
 		<url-pattern>/remove</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
+<!-- 	<servlet>
 		<servlet-name>timeS</servlet-name>
 		<servlet-class>test.uploadServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>timeS</servlet-name>
 		<url-pattern>/time</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 
 
