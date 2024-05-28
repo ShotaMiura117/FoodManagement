@@ -12,11 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Delete_Servlet extends HttpServlet {
+public class delete extends HttpServlet {
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("Windows-31j");
-		response.setCharacterEncoding("Windows-31j");
 
 		PrintWriter out = response.getWriter();
 		String name = request.getParameter("name");
@@ -39,10 +38,10 @@ public class Delete_Servlet extends HttpServlet {
 
 				int rowsAffected = pst.executeUpdate();
 				if (rowsAffected > 0) {
-					URL = "/design/RyoriDeleteSuccess.jsp";
+					URL = "/design/FoodDelete.jsp";
 					//out.print("Your data has been deleted");
 				} else {
-					URL = "/design/error.jsp";
+					URL = "/design/FoodNotDeleted.jsp";
 					//out.print("No data found with the given name");
 				}
 

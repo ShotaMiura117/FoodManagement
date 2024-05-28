@@ -3,12 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>エラー処理</title>
+<meta charset="UTF-8"><meta http-equiv="content-type" content="text/html; charset=windows-31j">
+<title>ErrorPage</title>
 </head>
+<style>
+font{
+text-align:center;
+}
+</style>
 <body>
-<font color="red">料理記入に失敗しました。</font>
+<font color="red">Something is wrong</font>
 <br><br>
-<a href="<%= request.getContextPath() %>/design/ryoriZairyoKinyu.jsp">料理記入ページへ</a>
+
+<a href="<%= request.getContextPath() %>/design/ryoriZairyoKinyu.jsp">InsertFoodPage</a>
 </body>
 </html>
