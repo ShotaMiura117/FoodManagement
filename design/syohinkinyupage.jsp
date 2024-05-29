@@ -18,23 +18,24 @@
                     <caption>食品記入</caption>
                     <tr>
                         <th>商品名</th>
-                         <td><input type="text" name="syouhinName" ></td>
+                         <td><input type="text" name="syouhinName" Required></td>
                     </tr>
                     <tr>
                         <th>気になる</th>
                         <td>
-                            <input type="radio" name="shokuzai_favorite" value="1" >Yes <input type="radio" name="shokuzai_favorite" value="0">No
+                            <input type="radio" name="shokuzai_favorite" value="1" >Yes
+                            <input type="radio" name="shokuzai_favorite" value="0">No
                             <input type="hidden" name="shokuzai_favorite" value="0">
 
                         </td>
                     </tr>
                     <tr>
                         <th>食材名</th>
-                        <td><input type="text" name="syokuzaiName" ></td>
+                        <td><input type="text" name="syokuzaiName" Required></td>
                     </tr>
                     <tr>
                         <th>数量</th>
-                        <td><input type="number" name="quantity" max="5000000" min="1">
+                        <td><input type="number" name="quantity" max="5000000" min="1" Required>
                          <select name="volume">
                                 <option value="1">g</option>
                                 <option value="2">ml</option>
@@ -48,7 +49,7 @@
                     <tr>
                         <th>保存方法</th>
                         <td>
-                            <select name="save_method" id="save">
+                            <select name="save_method" id="save" Required>
                               <option value="1">冷蔵庫</option>
                               <option value="2">冷凍庫</option>
                               <option value="3">野菜室</option>
@@ -66,7 +67,7 @@
                     <tr>
                         <th>ジャンル</th>
                         <td>
-                            <select name="genre_id">
+                            <select name="genre_id" Required>
                                <option value="1">肉類</option>
                                 <option value="2">野菜</option>
                                 <option value="3">果物</option>

@@ -13,6 +13,7 @@ public class RyoriServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("Windows-31J");
+
 		//get values of text field
 		String name = request.getParameter("name");
 		int time = Integer.parseInt(request.getParameter("time"));

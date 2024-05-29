@@ -16,12 +16,10 @@ public class Delete_Servlet extends HttpServlet {
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("Windows-31j");
-		response.setCharacterEncoding("Windows-31j");
 
 		PrintWriter out = response.getWriter();
 		String name = request.getParameter("name");
 		String URL = null;
-
 		Connection con1 = null;
 		PreparedStatement pst = null;
 
@@ -46,9 +44,10 @@ public class Delete_Servlet extends HttpServlet {
 
 		} catch (SQLException | ClassNotFoundException e) {
 			out.print("Error: " + e.toString());
+
+			request.getRequestDispatcher(URL).forward(request, response);
+
 		}
-		request.getRequestDispatcher(URL).forward(request, response);
 
 	}
-
 }
