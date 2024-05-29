@@ -15,7 +15,6 @@ public class RyoriServlet extends HttpServlet {
 		request.setCharacterEncoding("Windows-31J");
 		//get values of text field
 		String name = request.getParameter("name");
-		//request.setAttribute("name", name);
 		int time = Integer.parseInt(request.getParameter("time"));
 		String materials_name = request.getParameter("zairyo");
 		int volume = Integer.parseInt(request.getParameter("suryo"));
@@ -23,45 +22,26 @@ public class RyoriServlet extends HttpServlet {
 
 		String URL = null;
 
-		/*int volume01 = Integer.parseInt(volume);*/
-		String errorMsg = null;
+		try {
+			RyoriBean rbean = new RyoriBean(name, time, materials_name, volume, unit);
 
-		if (name == null || "".equals(name)) {
-			errorMsg = "名前を入力してください。";
-		} else if (materials_name == null || "".equals(materials_name)) {
-			errorMsg = "材料名を入力されてません。";
-		} else if (volume == 0) {
-			errorMsg = "数量を入力してください。";
-		} else if (unit == null || "".equals(unit)) {
-			errorMsg = "単位を入力してください";
-		}
+			int count = RyoriDAO.insertryori(rbean);
 
-		if (errorMsg == null) {
-			try {
-				RyoriBean rbean = new RyoriBean(name, time, materials_name, volume, unit);
-
-				int count = RyoriDAO.insertryori(rbean);
-
-				if (count < 1) {
-					URL = "/design/error.jsp";
-				} else {
-					URL = "/design/sucess.jsp";
-				}
-			} catch (NumberFormatException e) {
-				e.printStackTrace();
+			if (count < 1) {
 				URL = "/design/error.jsp";
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-				URL = "/design/error.jsp";
+			} else {
+				URL = "/design/sucess.jsp";
 			}
-			request.getRequestDispatcher(URL).forward(request, response);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			URL = "/design/error.jsp";
 
-		} else {
-			request.setAttribute("errorMsg", errorMsg);
-			//request.getRequestDispatcher("ryoriZairyoKinyu.jsp").forward(request, response);
-			return; // Stop further execution
+		} catch (SQLException e) {
+			e.printStackTrace();
+			URL = "/design/error.jsp";
 		}
+		request.getRequestDispatcher(URL).forward(request, response);
+
 	}
 
 }

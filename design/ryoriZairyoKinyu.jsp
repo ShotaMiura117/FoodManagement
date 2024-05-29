@@ -24,45 +24,28 @@
 		<div class="right_container">
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					料理名:
-					<input type="text" name="name" Required>
-					 分:
-					 <input type="number" name="time" Required><br> <br>
+					料理名: <input type="text" name="name" Required> 分: <input
+						type="number" name="time" Required><br> <br>
 				</div>
 				<div id="ingredientContainer">
 					<div class="list">
-						食材:
-						 <input type="text" name="zairyo" Required>
-						 数 量:
-						 <input type="number" name="suryo" max="500000000" min="0" Required>
-						単位:
-						<input type="number" name="tani" max="3" min="1" Required style="font-size: smaller;">
+						食材: <input type="text" name="zairyo" Required> 数 量: <input
+							type="number" name="suryo" max="500000000" min="0" Required>
+						単位: <input type="number" name="tani" max="3" min="1" Required
+							style="font-size: smaller;">
 					</div>
-					<%
-						String errorMsg = (String) request.getAttribute("errorMsg");
-						if (errorMsg != null) {
-					%>
-					<p><%=errorMsg%></p>
-					<%
-						}
-					%>
+
 					<div class="btn">
-						<a href="ryoriZairyoKinyu.jsp"><button type="button" name="cancel">キャンセル</button></a>
+						<a href="ryoriZairyoKinyu.jsp"><button type="button"
+								name="cancel">キャンセル</button></a>
 						<button type="submit" name="hozon">料理の材料保存</button>
 					</div>
 			</form>
 
 			<form action="<%=request.getContextPath()%>/remove" method="POST">
 				<div class="next">
-					Name:<input type="text" name="name" required><br><br>
-					<%
-						String msg = (String) request.getAttribute("errorMsg");
-						if (msg != null) {
-					%>
-					<p><%=msg%></p>
-					<%
-						}
-					%>
+					Name:<input type="text" name="name" required><br> <br>
+
 					<button type="submit">削除</button>
 				</div>
 			</form>
@@ -151,7 +134,7 @@
 
 						rs = pstmt.executeQuery();
 				%>
-				<TABLE BORDER="1" style="width:100%">
+				<TABLE BORDER="1" style="width: 100%">
 					<TR>
 						<TH>ID</TH>
 						<TH>TAG_NAME</TH>
