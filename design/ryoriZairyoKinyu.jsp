@@ -24,18 +24,19 @@
 		<div class="right_container">
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					料理名:<input type="text" name="name" Required> 分:<input
-						type="number" name="time" Required><br> <br>
+					料理名:
+					<input type="text" name="name" Required>
+					 分:
+					 <input type="number" name="time" Required><br> <br>
 				</div>
-
-
 				<div id="ingredientContainer">
 					<div class="list">
-						食材: <input type="text" name="zairyo" Required> 数 量: <input
-							type="number" name="suryo" max="500000000" min="0" Required> 単位: <input
-							type="number" name="tani" max="3" min="1" Required
-							style="font-size: smaller;">
-						<!--<button type="button" class="rowDelete">削除</button>-->
+						食材:
+						 <input type="text" name="zairyo" Required>
+						 数 量:
+						 <input type="number" name="suryo" max="500000000" min="0" Required>
+						単位:
+						<input type="number" name="tani" max="3" min="1" Required style="font-size: smaller;">
 					</div>
 					<%
 						String errorMsg = (String) request.getAttribute("errorMsg");
@@ -45,28 +46,26 @@
 					<%
 						}
 					%>
-
-
 					<div class="btn">
-						<a href="ryoriZairyoKinyu.jsp"><button type="button"
-								name="cancel">キャンセル</button></a>
+						<a href="ryoriZairyoKinyu.jsp"><button type="button" name="cancel">キャンセル</button></a>
 						<button type="submit" name="hozon">料理の材料保存</button>
 					</div>
 			</form>
+
 			<form action="<%=request.getContextPath()%>/remove" method="POST">
-				Name:<input type="text" name="name" required>
-				<%
-					String msg = (String) request.getAttribute("errorMsg");
-					if (msg != null) {
-				%>
-				<p><%= msg %></p>
-				<%
-					}
-				%>
-				<button type="submit" >削除</button>
+				<div class="next">
+					Name:<input type="text" name="name" required><br><br>
+					<%
+						String msg = (String) request.getAttribute("errorMsg");
+						if (msg != null) {
+					%>
+					<p><%=msg%></p>
+					<%
+						}
+					%>
+					<button type="submit">削除</button>
+				</div>
 			</form>
-
-
 
 		</div>
 		<div class="listing">
@@ -81,7 +80,7 @@
 							"jdbc:postgresql://52.195.46.205:5432/Food_management",
 							"postgres", "postgres");
 
-					String sql = "SELECT materials_name,volume FROM recipe";
+					String sql = "SELECT materials_name,volume FROM recipe LIMIT 15";
 
 					pst = con1.prepareStatement(sql);
 
@@ -112,22 +111,21 @@
 
 		</div>
 	</div>
-
 	<div class="left-container">
 		<div class="total">
 			<div class="box">
 				<div class="slideshow-container">
 					<div class="slider">
 						<img src="img/beefstew.jpg" alt="beer"
-							style="width: 250px; height: 250px">
+							style="width: 400px; height: 400px">
 					</div>
 					<div class="slider">
 						<img src="img/cheesecake.jpg" alt="sasimi"
-							style="width: 250px; height: 250px">
+							style="width: 400px; height: 400px">
 					</div>
 					<div class="slider">
 						<img src="img/curry_rice.jpg" alt="Ramen"
-							style="width: 250px; height: 250px">
+							style="width: 400px; height: 400px">
 					</div>
 				</div>
 			</div>
@@ -147,13 +145,13 @@
 								"jdbc:postgresql://52.195.46.205:5432/Food_management",
 								"postgres", "postgres");
 
-						String sql = "SELECT * FROM tag LIMIT 4";
+						String sql = "SELECT * FROM tag LIMIT 10";
 
 						pstmt = con.prepareStatement(sql);
 
 						rs = pstmt.executeQuery();
 				%>
-				<TABLE BORDER="1">
+				<TABLE BORDER="1" style="width:100%">
 					<TR>
 						<TH>ID</TH>
 						<TH>TAG_NAME</TH>

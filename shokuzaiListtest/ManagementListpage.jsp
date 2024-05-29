@@ -1,17 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=windows-31j"
-	pageEncoding="windows-31j"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 	<%@page import="java.util.*" %>
 	<%@page import="java.sql.*" %>
 	<%@page import="shokuzaiList.*" %>
+	<%@page import="java.util.Date"%>
+	<%@page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html public "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=windows-31j">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ŠÇ—‚·‚éHÞƒŠƒXƒgƒy[ƒW</title>
+<title>ç®¡ç†ã™ã‚‹é£Ÿæãƒªã‚¹ãƒˆãƒšãƒ¼ã‚¸</title>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/shokuzaiListtest/ManagementListpage.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://kit.fontaweso me.com/8ff098a16e.js"crossorigin="anonymous"></script>
 </head>
 <body>
@@ -19,14 +22,14 @@
 
                 <div class="logout">
                 			 <form action="<%=request.getContextPath() %>/logout">
-            	<button type="submit"class="b">ƒƒOƒAƒEƒg</button></form>
+            	<button type="submit"class="b">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</button></form>
 
 		</div>
             <div class="hyoji"style="display:inline-flex">
-                <form action="<%=request.getContextPath() %>/SelectList"method="get"id="select">
-                <button type="submit" class="btn btn-outline-primary" name="hyoji">‘I‘ð‚µ‚½H•i‚Å—¿—‚ðŒŸõ</button></form>
+                <form action="<%=request.getContextPath() %>/SelectList"method="POST"id="select">
+                <button type="submit" class="btn btn-outline-primary" name="hyoji">é¸æŠžã—ãŸé£Ÿå“ã§æ–™ç†ã‚’æ¤œç´¢</button></form>
            <form action="<%=request.getContextPath() %>/shokuzaikinyu"method="get"id="tsuika">
-                <button type="submit" class="btn btn-outline-info"name="tsuika"id="tsuika">H•i‚ð’Ç‰Á</button></form>
+                <button type="submit" class="btn btn-outline-info"name="tsuika"id="tsuika">é£Ÿå“ã‚’è¿½åŠ </button></form>
                             </div>
 
 
@@ -35,15 +38,15 @@
 			<table  >
 				<tr >
 				<th ></th>
-				<th >‚¨‹C‚É“ü‚è</th>
-					<th >ŠJ••</th>
-					<th >HÞ–¼</th>
-					<th>”—Ê</th>
-					<th >•ÛŠÇ•û–@</th>
-					<th >ŠúŒÀ</th>
-					<th >Žg—p—Ê</th>
+				<th >ãŠæ°—ã«å…¥ã‚Š</th>
+					<th >é–‹å°</th>
+					<th >é£Ÿæå</th>
+					<th>æ•°é‡</th>
+					<th >ä¿ç®¡æ–¹æ³•</th>
+					<th >æœŸé™</th>
+					<th >ä½¿ç”¨é‡</th>
 
-					<th >íœ</th>
+					<th >å‰Šé™¤</th>
 				</tr>
 	<%
 
@@ -59,33 +62,41 @@
 				<tr>
 					<td ><input type="checkbox"name="selectShokuzai"value="<%=sListbean.getName()%>"form="select"></td>
 					<td>
-					<b><%if(sListbean.getSFavorite() ==1){out.write("š");}else{out.write("™");};%></b>
+					<b><%if(sListbean.getSFavorite() ==1){out.write("â˜…");}else{out.write("â˜†");};%></b>
 					</td>
-					<td ><%if(sListbean.getOpen() == 1){out.print("Ï");}else{out.print("–¢");};%></td>
+					<td ><%if(sListbean.getOpen() == 1){out.print("æ¸ˆ");}else{out.print("æœª");};%></td>
 					<td >
 					<form action="<%=request.getContextPath()%>/shokuzai_deteil">
 					<button type="submit" class="btn btn-Link"name="deteil"value="<%=sListbean.getShokuzaiID()%>">
 					<%=sListbean.getName()%></button></form></td>
 					<td><%=sListbean.getVolume()%><%=sListbean.getUnit() %>/<%=sListbean.getDefaVolume()%>
-					<%=sListbean.getUnit() %>~<%=sListbean.getQuantity()%></td>
+					<%=sListbean.getUnit() %>Ã—<%=sListbean.getQuantity()%></td>
 					<td><%switch(sListbean.getSave()){
-					case 1 :out.write("—â‘ ŒÉ")
-					;break; case 2 :out.write("—â“€ŒÉ")
-					;break; case 3 :out.write("–ìØŽº")
-					;break; case 4:out.write("í‰·")
+					case 1 :out.write("å†·è”µåº«")
+					;break; case 2 :out.write("å†·å‡åº«")
+					;break; case 3 :out.write("é‡Žèœå®¤")
+					;break; case 4:out.write("å¸¸æ¸©")
 					;
 					}%></td>
-					<td ><%=sListbean.getExpiration()%> </td>
+					<td ><%Date exception = sListbean.getExpiration();
+					if(exception !=null){
+			        Date calender =new Date();
+			        long diffInMillies=sListbean.getExpiration().getTime()-calender.getTime();
+			        long diffInDays=diffInMillies / (1000 * 60 * 60 * 24);
+			        String color=(diffInDays <=3)?"red":"black";
+			        out.println("<font color=\""+color+"\">");}%>
+			        <%if(exception ==null){out.println("");}else{out.print(sListbean.getExpiration());}%> </td>
 					<td ><form action= "<%=request.getContextPath()%>/usedvolume"method="POST">
 					<input type="hidden" name="devoSID"value="<%=sListbean.getShokuzaiID()%>">
-					<input type="number" name="devolume" min="0" max="<%=sListbean.getDefaVolume()*sListbean.getQuantity()%>deletes"value="0"placeholder="0.01"step="0.1">
+					<input type="number" name="devolume" min="0" max="<%=sListbean.getDefaVolume()*sListbean.getQuantity()%>deletes"
+					value="0"placeholder="0.01"step="0.1">
 					<%=sListbean.getUnit() %>
 
-					<input type="submit"value="Šm’è"></form></td>
+					<input type="submit"value="ç¢ºå®š"></form></td>
 
 					 <td ><form action="<%=request.getContextPath() %>/deletes"method="POST">
 					 <button type="submit" class="btn btn-outline-success" name="deletes"
-					 value="<%=sListbean.getShokuzaiID()%>">íœ</button></form></td>
+					 value="<%=sListbean.getShokuzaiID()%>">å‰Šé™¤</button></form></td>
 					 </tr>
 <%
 }

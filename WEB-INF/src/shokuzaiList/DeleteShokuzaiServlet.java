@@ -19,7 +19,7 @@ throws ServletException,IOException{
 			(Integer.parseInt(DSID));
 
 		ShokuzaiListDAO.delete(dsbean);
-		forwardURL="/sList";
+		forwardURL="/ManagementList";
 	} catch (SQLException e) {
 
 		e.printStackTrace();

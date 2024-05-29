@@ -1,16 +1,20 @@
 .container {
-	width: 1000px;
-	max-height: fit-content;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
-	overflow: auto;
-	flex: 50%;
+	/*width: 1000px;*/
+	/*max-height: fit-content;*/
+	/*position: absolute;*/
+	/*top: 50%;
+	left: 50%;*/
+	/*transform: translate(-50%, -50%);*/
+	/*box-sizing: border-box;*/
+	/*overflow: auto;*/
+	/*flex: 50%;*/
 	background-color: #BACD92;
-	margin-left: auto;
-	margin-right: auto;
+	/*margin-left: auto;
+	margin-right: auto;*/
+}
+*{
+    margin: 0;
+    padding: 0;
 }
 
 .top_title {
@@ -18,15 +22,17 @@
 }
 
 .btn {
-	display: flex;
+	/*display: flex;
 	justify-content: space-between;
-	padding-top: 40px;
+	padding-top: 40px;*/
+	margin-top:30px;
+	margin-right:170px;
 }
 
 .medium_box {
-	border: 1px solid black;
-	width: 250px;
-	height: 100px;
+	/*border: 1px solid black;*/
+	width: 400px;
+	height: 240px;
 	margin-top: 20px;
 }
 
@@ -67,7 +73,8 @@
 
 .name {
 	margin-top: 30px;
-	text-align: center;
+	text-align: left;
+	margin-right:100px;
 }
 
 .time {
@@ -88,6 +95,7 @@ table {
 .list {
 	margin-top: 20px;
 	text-align: left;
+
 }
 
 button {
@@ -112,3 +120,9 @@ button:hover {
 .listing {
 	margin-top: 20px;
 }
+.next{
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+

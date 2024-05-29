@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=windows-31j">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ƒAƒJƒEƒ“ƒgì¬ƒy[ƒW</title>
+    <title>ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½ì¬ï¿½yï¿½[ï¿½W</title>
 
 
 
@@ -30,29 +30,29 @@
     <main class="form-signin">
 		<form action="<%=request.getContextPath()%>/createa" method="POST">
 
-			<h1 class="h3 mb-3 fw-normal">V‹KƒAƒJƒEƒ“ƒg“o˜^</h1>
+			<h1 class="h3 mb-3 fw-normal">ï¿½Vï¿½Kï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½oï¿½^</h1>
 			<div class="form-floating">
 				<input type="email" name="user_id" class="form-control"
 					id="floatingInput" placeholder="nana40@gmail.com" Required> <label
 					for="floatingInput"><i class="fa-solid fa-envelope"></i></label>
 			</div>
 			<br>
-			4•¶ŽšˆÈã‚Ì”¼Šp‰p”Žš‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B
+			4ï¿½ï¿½ï¿½ï¿½ï¿½Èï¿½Ì”ï¿½ï¿½pï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
 
 			<div class="form-floating">
 				<input type="password" name="password" class="form-control"
 					id="floatingPassword" placeholder="Password"
 					pattern="^[a-zA-Z0-9]+$" maxlength="20" minlength="4" Required> <label
 					for="floatingPassword"><i class="fa-solid fa-key"></i></label> <input
-					type="checkbox" onclick="myFunction()">ƒpƒXƒ[ƒh‚ð•\Ž¦‚·‚é
+					type="checkbox" onclick="myFunction()">ï¿½pï¿½Xï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			</div>
 			<br>
 
 			<button class="w-100 btn btn-lg btn-primary" type="submit"
 			onclick="location.href='<%=request.getContextPath()%>/createa"
-			>“o˜^</button>
+			>ï¿½oï¿½^</button>
 			</br></br>
-			<a href = login.jsp>–ß‚é</a>
+			<a href = login.jsp>ï¿½ß‚ï¿½</a>
 
 
 			<br>

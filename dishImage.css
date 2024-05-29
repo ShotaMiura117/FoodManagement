@@ -1,0 +1,242 @@
+<style type="text/css">
+
+p.nomal{
+  overflow-wrap: normal;
+}
+
+p.break{
+  overflow-wrap: break-word;
+}
+
+
+
+.flame01 {
+width: fit-content;
+margin: 0em auto;
+padding: 1em;
+width: 200px;
+color: #000;
+background-color: #f5f5f5;
+border: 1px solid #ccc;
+position: relative;
+right: 345px;
+height:20px;
+}
+
+
+
+
+.flame02 {
+margin: 1em auto;
+padding: 1em;
+width: 680px;
+height: 200px;
+color: #000;
+background-color: #f5f5f5;
+border: 1px solid #ccc;
+position: relative;
+right: 105px;
+}
+
+
+.flame03{
+margin: 1em auto;
+padding: 1em;
+width: 325px;
+height:130px;
+color: #606060;
+background-color: #f8b862;
+border: 2px solid #deb887;
+border-radius: 10px;
+position: relative;
+top: -10px;
+right: 165px;
+}
+
+
+.flame04 {
+border: 1px solid #000;
+
+margin: 1em auto;
+padding: 0.4em;
+width: 160px;
+background-color: #fff;
+position: relative;
+top: -250px;
+left: 140px;
+
+}
+
+
+
+.flame05 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -270px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+
+.flame06 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -250px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+
+
+.flame07 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -295px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+.flame08 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -295px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+
+.flame09 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -245px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+
+.flame10 {
+border: 1px solid #000;
+
+margin: 1em auto;
+padding: 0.4em;
+width: 320px;
+background-color: #fff;
+position: relative;
+top: -252px;
+left: 185px;
+
+}
+
+
+
+.flame11 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -295px;
+left: 465px;
+height: 30px;
+width: fit-content;
+}
+
+
+.flame12 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -280px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+.flame13 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -280px;
+left: 465px;
+height: 30px;
+width: fit-content;
+}
+
+
+.flame14 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -155px;
+left: 470px;
+height: 30px;
+width: fit-content;
+}
+
+
+
+.flame15 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -320px;
+left: 465px;
+height: 30px;
+width: fit-content;
+}
+
+
+.flame16 {
+border: 1px solid #89c3eb;
+margin: 1em auto;
+padding: 0.4em;
+width: 200px;
+background-color: #fff;
+position: relative;
+top: -210px;
+left: 465px;
+height: 30px;
+width: fit-content;
+}
+
+
+
+</style>

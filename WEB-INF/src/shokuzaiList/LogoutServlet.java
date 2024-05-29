@@ -9,17 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class Logout extends HttpServlet{
+public class LogoutServlet extends HttpServlet{
 
 
 
-public void doPost(HttpServletRequest request, HttpServletResponse response)
+public void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException,IOException{
+
 	HttpSession session=request.getSession();
-
-		session.invalidate();
-System.out.println("ログアウトしました。");
-System.out.println("<a herf=\"Foodmanagementtop.jsp\">");
-
-	}
-}
+	if(session !=null) {session.invalidate();}
+	response.sendRedirect("shokuzaiListtest/logout.jsp");
+}}
