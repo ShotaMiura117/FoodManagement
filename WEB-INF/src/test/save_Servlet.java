@@ -29,6 +29,7 @@ public class save_Servlet extends HttpServlet {
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
 		String URL = null;
+
 		try {
 			EntryBean ebean = new EntryBean(materials_name, item_name, expiration_date, volume,
 					unit_id, quantity, genre_id, open_check, save_method, filling_date, shokuzai_favorite,

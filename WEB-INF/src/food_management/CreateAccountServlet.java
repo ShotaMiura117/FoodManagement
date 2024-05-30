@@ -72,27 +72,6 @@ public class CreateAccountServlet extends HttpServlet {
 		request.getRequestDispatcher(forwardURL).forward(request, response);
 	}
 
-//	public void doGet(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//
-//		String forwardURL = null;
-//
-//		try {
-//			List<AccountBean> accountList = CreateAccountDAO.getAccountList();
-//			forwardURL = "design/SignUp.jsp";
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//			forwardURL = "/test_shokuzai_detail/testerror.jsp";
-//			//			sqlエラーで詳細ページに飛べない時
-//		} catch (IndexOutOfBoundsException e) {
-//			e.printStackTrace();
-//			forwardURL = "/test_shokuzai_detail/testerror.jsp";
-//			System.out.println("食材が存在しません");
-//			//			食材が存在しない時
-//		}
-//
-//		request.getRequestDispatcher(forwardURL).forward(request, response);
-//	}
 
 }
 

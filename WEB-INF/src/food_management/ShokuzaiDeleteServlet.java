@@ -19,6 +19,7 @@ public class ShokuzaiDeleteServlet extends HttpServlet {
 		int shokuzai_id = (int) session.getAttribute("shokuzai_id");
 		System.out.println(shokuzai_id);
 
+
 		String forwardURL = null;
 
 		try {
