@@ -20,8 +20,12 @@ th \,td{padding:8px;
 text-align:left;}
 </style>
 <body>
-<form action="<%=request.getContextPath() %>/food_gokei" method="post">
+<form action="<%=request.getContextPath() %>/food_gokei" method="get"id="goukei">
 <input type="submit"value="合計ページへ"/>
+</form>
+<form action="<%=request.getContextPath() %>/ManagementList"method="post">
+<input type="submit" value="食材のリストに戻る">
+</form>
 <table>
 <thead>
 <tr>
@@ -36,7 +40,7 @@ request.getAttribute("foodList");if(foodList !=null){
 for (SelectShokuzaiBean food : foodList){
 %>
 <tr>
-<td><input type="checkbox"name="selectedFoods"
+<td><input type="checkbox"name="selectedFoods"form="goukei"
 value="<%=food.getFoodID()%>"/>
 </td>
 <td><%=food.getFoodName() %></td>
@@ -47,7 +51,6 @@ value="<%=food.getFoodID()%>"/>
 %>
 </tbody>
 </table>
-</form>
 
 </body>
 </html>
