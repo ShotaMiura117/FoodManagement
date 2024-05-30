@@ -3,97 +3,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="content-type" content="text/html; charset=windows-31j">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¤•i‹L“üƒy[ƒW</title>
-    <link rel="stylesheet" href="syohinkinyupage.css">
+<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=windows-31j">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ï¿½ï¿½ï¿½iï¿½Lï¿½ï¿½ï¿½yï¿½[ï¿½W</title>
+<link rel="stylesheet" href="syohinkinyupage.css">
 </head>
 <body>
-    <div class="container">
-        <div class="table">
-            <div class="tablehead">
-            <form action="<%= request.getContextPath() %>/touroku" method="POST">
-                <table>
-                    <caption>H•i‹L“ü</caption>
-                    <tr>
-                        <th>¤•i–¼</th>
-                         <td><input type="text" name="syouhinName" ></td>
-                    </tr>
-                    <tr>
-                        <th>‹C‚É‚È‚é</th>
-                        <td>
-                            <input type="radio" name="shokuzai_favorite" value="1" >Yes <input type="radio" name="shokuzai_favorite" value="0">No
-                            <input type="hidden" name="shokuzai_favorite" value="0">
+	<div class="container">
+		<div class="table">
+			<div class="tablehead">
+				<form action="<%=request.getContextPath()%>/touroku" method="POST">
+					<table>
+						<caption>ï¿½Hï¿½iï¿½Lï¿½ï¿½</caption>
+						<tr>
+							<th>ï¿½ï¿½ï¿½iï¿½ï¿½</th>
+							<td><input type="text" name="syouhinName" Required></td>
+						</tr>
+						<tr>
+							<th>ï¿½Cï¿½É‚È‚ï¿½</th>
+							<td><input type="radio" name="shokuzai_favorite" value="1">Yes
+								<input type="radio" name="shokuzai_favorite" value="0">No
+								<input type="hidden" name="shokuzai_favorite" value="0">
+
+							</td>
+						</tr>
+						<tr>
+							<th>ï¿½Hï¿½Þ–ï¿½</th>
+							<td><input type="text" name="syokuzaiName" Required></td>
+						</tr>
+						<tr>
+							<th>ï¿½ï¿½ï¿½ï¿½</th>
+							<td><input type="number" name="quantity" max="5000000"
+								min="1" Required> <select name="volume">
+									<option value="1">g</option>
+									<option value="2">ml</option>
+									<option value="3">ï¿½ï¿½</option>
+							</select></td>
+						<tr>
+							<th>ï¿½~</th>
+							<td><input type="number" name="unit_id" max="5000000"
+								min="1"></td>
+						</tr>
+						<tr>
+							<th>ï¿½Û‘ï¿½ï¿½ï¿½ï¿½@</th>
+							<td><select name="save_method" id="save" Required>
+									<option value="1">ï¿½â‘ ï¿½ï¿½</option>
+									<option value="2">ï¿½â“€ï¿½ï¿½</option>
+									<option value="3">ï¿½ï¿½ØŽï¿½</option>
+									<option value="4">ï¿½í‰·ï¿½Û‘ï¿½</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th>ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½</th>
+							<td><input type="radio" name="open_check" value="1" checked>ï¿½Jï¿½ï¿½ï¿½Ï‚ï¿½<input
+								type="radio" name="open_check" value="0">ï¿½ï¿½ï¿½Jï¿½ï¿½</td>
+						</tr>
+						<tr>
+							<th>ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+							<td><select name="genre_id" Required>
+									<option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="2">ï¿½ï¿½ï¿½</option>
+									<option value="3">ï¿½Ê•ï¿½</option>
+									<option value="4">ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="5">ï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½Cï¿½ï¿½ï¿½ï¿½</option>
+									<option value="6">ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="7">ï¿½pï¿½ï¿½ï¿½ï¿½</option>
+									<option value="8">ï¿½ï¿½ï¿½Í‚ï¿½ï¿½</option>
+									<option value="9">ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½</option>
+									<option value="10">ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="11">ï¿½Ë—ï¿½</option>
+									<option value="12">ï¿½ï¿½ï¿½[ï¿½Eï¿½f</option>
+									<option value="13">ï¿½aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="14">ï¿½mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="15">ï¿½ï¿½ï¿½Ø’ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+									<option value="16">ï¿½ï¿½ï¿½Ì‘ï¿½</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th>ï¿½Lï¿½ï¿½ï¿½ï¿½</th>
+							<td><input type="text" name="filling_date" required>
+							</td>
+						</tr>
+						<tr>
+							<th>ï¿½Ü–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
+							<td><input type="date" class="date" name="expiration_date"
+								required></td>
+						</tr>
+					</table>
+					<br>
+					<div class="button">
 
                         </td>
                     </tr>
                     <tr>
-                        <th>HÞ–¼</th>
-                        <td><input type="text" name="syokuzaiName" ></td>
-                    </tr>
-                    <tr>
-                        <th>”—Ê</th>
-                        <td><input type="number" name="quantity" max="5000000" min="1">
-                         <select name="volume">
-                                <option value="1">g</option>
-                                <option value="2">ml</option>
-                                <option value="3">ŒÂ</option>
-                                </select>
-                        </td>
-                     <tr>
-                        <th>~</th>
-                        <td><input type="number" name="unit_id" max="5000000" min="1"></td>
-                    </tr>
-                    <tr>
-                        <th>•Û‘¶•û–@</th>
-                        <td>
-                            <select name="save_method" id="save">
-                              <option value="1">—â‘ ŒÉ</option>
-                              <option value="2">—â“€ŒÉ</option>
-                              <option value="3">–ìØŽº</option>
-                              <option value="4">í‰·•Û‘¶</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>ŠJ••ó‘Ô</th>
-                        <td>
-                            <input type="radio" name="open_check" value="1" checked>ŠJ••Ï‚Ý<input type="radio" name="open_check" value="0">–¢ŠJ••
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>ƒWƒƒƒ“ƒ‹</th>
+                        <th>ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
                         <td>
                             <select name="genre_id">
-                               <option value="1">“÷—Þ</option>
-                                <option value="2">–ìØ</option>
-                                <option value="3">‰Ê•¨</option>
-                                <option value="4">‹›‰î—Þ</option>
-                                <option value="5">Š£•¨EŠC‘”—Þ</option>
-                                <option value="6">—‘—Þ</option>
-                                <option value="7">ƒpƒ“—Þ</option>
-                                <option value="8">‚²‚Í‚ñ—Þ</option>
-                                <option value="9">“û»•i—Þ</option>
-                                <option value="10">“¤E“¤•…—Þ</option>
-                                <option value="11">–Ë—Þ</option>
-                                <option value="12">ƒ‹[E‘f</option>
-                                <option value="13">˜a•—’²–¡—¿</option>
-                                <option value="14">—m•—’²–¡—¿</option>
-                                <option value="15">’†‰Ø’²–¡—¿</option>
-                                <option value="16">‚»‚Ì‘¼</option>
+                               <option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="2">ï¿½ï¿½ï¿½</option>
+                                <option value="3">ï¿½Ê•ï¿½</option>
+                                <option value="4">ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="5">ï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½Cï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="6">ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="7">ï¿½pï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="8">ï¿½ï¿½ï¿½Í‚ï¿½ï¿½</option>
+                                <option value="9">ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½</option>
+                                <option value="10">ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="11">ï¿½Ë—ï¿½</option>
+                                <option value="12">ï¿½ï¿½ï¿½[ï¿½Eï¿½f</option>
+                                <option value="13">ï¿½aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="14">ï¿½mï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="15">ï¿½ï¿½ï¿½Ø’ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                                <option value="16">ï¿½ï¿½ï¿½Ì‘ï¿½</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <th>‹L“ü“ú</th>
+                        <th>ï¿½Lï¿½ï¿½ï¿½ï¿½</th>
                         <td>
                             <input type="text" name="filling_date" required>
                         </td>
                     </tr>
                     <tr>
-                        <th>Ü–¡ŠúŒÀDÁ”ïŠúŒÀ</th>
+                        <th>ï¿½Ü–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
                         <td>
                             <input type="date" class="date" name="expiration_date" required>
                         </td>
@@ -102,7 +135,7 @@
                 <br>
                 <div class="button">
 
-                <button type="submit"  class="btn">•Û‘¶</button>
+                <button type="submit"  class="btn">ï¿½Û‘ï¿½</button>
                 </div>
                 </form>
                 </br>
@@ -111,7 +144,7 @@
 					method="POST">
 				 --%>	<div class="button">
 					<a href="main.jsp">
-						<button type="submit" class="b" name="b">ƒLƒƒƒ“ƒZƒ‹</button></a>
+						<button type="submit" class="b" name="b">ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½</button></a>
 						<br>
 						<br>
 					</div>

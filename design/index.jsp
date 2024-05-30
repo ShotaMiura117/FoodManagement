@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=windows-31j">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ƒ^ƒCƒgƒ‹ƒy[ƒW</title>
+<title>ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½yï¿½[ï¿½W</title>
 <link rel="stylesheet" href="title.css">
 
 <link
@@ -17,22 +17,22 @@
 <body>
 	<nav class="navbar">
 		<ul class="nav-list">
-			<li><a href="login.jsp">ƒ}ƒlƒWƒƒ“ƒgƒŠƒXƒg</a></li>
-			<li><a href="login.jsp">H•iÚ×</a></li>
-			<li><a href="login.jsp">H•i‹L“ü</a></li>
-			<li><a href="login.jsp">—¿—Ú×ƒy[ƒW</a></li>
-			<li><a href="login.jsp">•K—v‚È¤•i‡Œv</a></li>
+			<li><a href="login.jsp">ï¿½}ï¿½lï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Xï¿½g</a></li>
+			<li><a href="login.jsp">ï¿½Hï¿½iï¿½Úï¿½</a></li>
+			<li><a href="login.jsp">ï¿½Hï¿½iï¿½Lï¿½ï¿½</a></li>
+			<li><a href="login.jsp">ï¿½ï¿½ï¿½ï¿½ï¿½Ú×ƒyï¿½[ï¿½W</a></li>
+			<li><a href="login.jsp">ï¿½Kï¿½vï¿½Èï¿½ï¿½iï¿½ï¿½ï¿½v</a></li>
 
-			<!-- <li><a href="ManagementListpage.jsp">ƒ}ƒlƒWƒƒ“ƒgƒŠƒXƒg</a></li>
-			<li><a href="syohinsyosai.jsp">H•iÚ×</a></li>
-			<li><a href="syohinkinyupage.jsp">H•i‹L“ü</a></li>
-			<li><a href="ryourisyousaipage.jsp">—¿—Ú×ƒy[ƒW</a></li>
-			<li><a href="syouhingoukei.jsp">•K—v‚È¤•i‡Œv</a></li> -->
+			<!-- <li><a href="ManagementListpage.jsp">ï¿½}ï¿½lï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Xï¿½g</a></li>
+			<li><a href="syohinsyosai.jsp">ï¿½Hï¿½iï¿½Úï¿½</a></li>
+			<li><a href="syohinkinyupage.jsp">ï¿½Hï¿½iï¿½Lï¿½ï¿½</a></li>
+			<li><a href="ryourisyousaipage.jsp">ï¿½ï¿½ï¿½ï¿½ï¿½Ú×ƒyï¿½[ï¿½W</a></li>
+			<li><a href="syouhingoukei.jsp">ï¿½Kï¿½vï¿½Èï¿½ï¿½iï¿½ï¿½ï¿½v</a></li> -->
 		</ul>
 		<h2 class="title">FoodManagementSystem</h2>
 		<div class="rightNav">
 			<a href="login.jsp">
-				<button class="btn btn-sm">ƒƒOƒCƒ“</button>
+				<button class="btn btn-sm">ï¿½ï¿½ï¿½Oï¿½Cï¿½ï¿½</button>
 			</a>
 		</div>
 	</nav>

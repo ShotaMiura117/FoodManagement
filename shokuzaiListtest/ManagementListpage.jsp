@@ -29,7 +29,7 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
             <div class="hyoji"style="display:inline-flex">
                 <form action="<%=request.getContextPath() %>/SelectList"method="POST"id="select">
                 <button type="submit" class="btn btn-outline-primary" name="hyoji">選択した食品で料理を検索</button></form>
-           <form action="<%=request.getContextPath() %>/shokuzaikinyu"method="get"id="tsuika">
+           <form action="<%=request.getContextPath() %>/touroku"method="get"id="tsuika">
                 <button type="submit" class="btn btn-outline-info"name="tsuika"id="tsuika">食品を追加</button></form>
                             </div>
 
