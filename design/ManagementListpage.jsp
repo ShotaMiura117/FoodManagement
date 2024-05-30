@@ -29,7 +29,7 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
                 <form action="<%=request.getContextPath() %>/FoodList"method="Get"id="select">
                 <button type="submit" class="btn btn-outline-primary" name="hyoji">選択した食品で料理を検索</button>
                 </form>
-           <form action="<%=request.getContextPath() %>/touroku"method="Post"id="tsuika">
+           <form action="<%=request.getContextPath() %>/design/syohinkinyupage.jsp"method="Post"id="tsuika">
                 <button type="submit" class="btn btn-outline-info"name="tsuika"id="tsuika">食品を追加</button></form>
                             </div>
 
@@ -90,7 +90,7 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
 					<td ><form action= "<%=request.getContextPath()%>/usedvolume"method="POST">
 					<input type="hidden" name="devoSID"value="<%=sListbean.getShokuzaiID()%>">
 					<input type="number" name="devolume" min="0" max="<%=sListbean.getDefaVolume()*sListbean.getQuantity()%>deletes"
-					value="0"placeholder="0.01"step="0.1">
+					value="0"placeholder="0"step="0.1">
 					<%=sListbean.getUnit() %>
 
 					<input type="submit"value="確定"></form></td>
