@@ -15,7 +15,19 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String forwardURL = null;
 		try {
-			List<ShokuzaiBean> shokuzaiList = ShokuzaiDAO.getShokuzaiList();
+
+			HttpSession session = request.getSession();
+
+			//		選択した食材IDを取得し、セッションに入れる
+			//		getParameterがnullなら取得しない
+			if (!(request.getParameter("deteil") == null)) {
+				int detail = Integer.parseInt(request.getParameter("deteil"));
+				session.setAttribute("detail", detail);
+			}
+			int choose_id = (int) session.getAttribute("detail");
+
+
+			List<ShokuzaiBean> shokuzaiList = ShokuzaiDAO.getShokuzaiList(choose_id);
 			//			セッションに格納
 			request.setAttribute("shokuzaiList", shokuzaiList);
 			//			 食材リストの(0)番目をShokuzaibeanにセット
@@ -23,7 +35,6 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 
 
 			//			食材beanのデータをセッションに追加
-			HttpSession session = request.getSession();
 			session.setAttribute("item_name", sbean.getItem_name());
 			session.setAttribute("materials_name", sbean.getMaterials_name());
 			session.setAttribute("quantity", sbean.getQuantity());
@@ -36,6 +47,9 @@ public class ShokuzaiDetailServlet extends HttpServlet {
 			session.setAttribute("unit_id", sbean.getUnit_id());
 			session.setAttribute("favorite", sbean.getShokuzai_favorite());
 			session.setAttribute("shokuzai_id", sbean.getShokuzai_id());
+
+
+
 
 			//			ShokuzaiDetailテスト
 			forwardURL = "test_shokuzai_detail/shokuzaiDetail.jsp";

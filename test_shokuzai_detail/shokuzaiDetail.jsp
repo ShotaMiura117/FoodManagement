@@ -15,14 +15,11 @@
 <body>
 	<h1 class="top_title">食品詳細</h1>
 	<div class="but">
+	<form action ="<%=request.getContextPath()%>/ManagementList" method="POST">
 		<button
-			<%-- 正しいURL
-			onclick="location.href='<%=request.getContextPath()%>/design/ManagementListpage.jsp'">
-			食材リストに戻る --%>
-
-
-			onclick="location.href='<%=request.getContextPath()%>/test_shokuzai_detail/testshokuzaitop.jsp'">
+			onclick="location.href='<%=request.getContextPath()%>/ManagementList'" method="POST" type="sumbit">
 			食品リストに戻る</button>
+			</form>
 	</div>
 	<div class="container">
 		<div class="table">
