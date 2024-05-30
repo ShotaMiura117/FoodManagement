@@ -112,7 +112,7 @@
 
 <servlet>
 	<servlet-name>sListS</servlet-name>
-	<servlet-class>shokuzaiList.ShokuzaiListServlet</servlet-class>
+	<servlet-class>food_management.ShokuzaiListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>sListS</servlet-name>
@@ -121,17 +121,8 @@
 
 
 	<servlet>
-	<servlet-name>SelectListS</servlet-name>
-	<servlet-class>shokuzaiList.SelectListServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-	<servlet-name>SelectListS</servlet-name>
-	<url-pattern>/SelectList</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
 	<servlet-name>deleteS</servlet-name>
-	<servlet-class>shokuzaiList.DeleteShokuzaiServlet</servlet-class>
+	<servlet-class>food_management.DeleteShokuzaiServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>deleteS</servlet-name>
@@ -140,7 +131,7 @@
 
 	<servlet>
 	<servlet-name>WrDataS</servlet-name>
-	<servlet-class>shokuzaiList.WrDataServlet</servlet-class>
+	<servlet-class>food_management.WrDataServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>WrDataS</servlet-name>
@@ -149,7 +140,7 @@
 
 	<servlet>
 	<servlet-name>logoutS</servlet-name>
-	<servlet-class>shokuzaiList.LogoutServlet</servlet-class>
+	<servlet-class>food_management.LogoutServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>logoutS</servlet-name>
@@ -158,11 +149,22 @@
 
 	<servlet>
 	<servlet-name>testS</servlet-name>
-	<servlet-class>shokuzaiList.TESTServlet</servlet-class>
+	<servlet-class>food_management.TESTServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	<servlet-name>testS</servlet-name>
 	<url-pattern>/TEST</url-pattern>
 	</servlet-mapping>
+
+	<servlet>
+	<servlet-name>FoodListS</servlet-name>
+	<servlet-class>food_management.FoodlistServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>FoodListS</servlet-name>
+	<url-pattern>/FoodList</url-pattern>
+	</servlet-mapping>
+
+
 
 </web-app>
