@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -17,6 +18,11 @@ public class LoginServlet extends HttpServlet {
         String id = request.getParameter("email");
         String password = request.getParameter("password");
 
+//        セッションに追加
+    	HttpSession session=request.getSession();
+		session.setAttribute("login_key", (long) 4);
+
+
         // ���͏���\�������Ċm�F
 		response.setCharacterEncoding("Windows-31J");
 		PrintWriter out = response.getWriter();
@@ -24,7 +30,8 @@ public class LoginServlet extends HttpServlet {
 		//out.println("���͂��ꂽ����\�����܂�<br>");
 		out.println("ID : " + id + "    PASSWORD : " + password);
 
-		response.sendRedirect("design/failure.jsp");
+//		response.sendRedirect("design/failure.jsp");
+		response.sendRedirect("design/success.jsp");
 
 
         // ���͂��ꂽid�ƃp�X���[�h�����؂���

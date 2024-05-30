@@ -4,21 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
-<title>ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½ì¬ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½</title>
+<title>ƒAƒJƒEƒ“ƒgì¬Ž¸”s‰æ–Ê</title>
 
 <style>
  h2 {
-  /*ï¿½ï¿½ï¿½ÌŽï¿½Þiï¿½ï¿½ï¿½ï¿½ï¿½j ï¿½ï¿½ï¿½ï¿½ ï¿½F*/
   border-bottom: solid 3px black;
 }
 </style>
 </head>
 <body>
 
-<h2>ï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½Uï¿½[ï¿½ï¿½ï¿½ÍŠï¿½ï¿½ÉŽgï¿½pï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½B</h2>
-ï¿½ï¿½ï¿½ß‚ï¿½ï¿½ï¿½ï¿½è’¼ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+<h2>‚±‚Ìƒ†[ƒU[–¼‚ÍŠù‚ÉŽg—p‚³‚ê‚Ä‚¢‚Ü‚·B</h2>
+‰‚ß‚©‚ç‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢B
 <br>
-<a href="<%=request.getContextPath() %>/design/SignUp.jsp">ï¿½Aï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½ì¬ï¿½yï¿½[ï¿½Wï¿½É–ß‚ï¿½</a>
+<a href="<%=request.getContextPath() %>/design/SignUp.jsp">ƒƒOƒCƒ“ƒy[ƒW‚É–ß‚é</a>
 
 </body>
 </html>

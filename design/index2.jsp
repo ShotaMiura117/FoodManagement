@@ -17,17 +17,11 @@
 <body>
 	<nav class="navbar">
 		<ul class="nav-list">
-			<li><a href="login.jsp">マネジメントリスト</a></li>
-			<li><a href="login.jsp">食品詳細</a></li>
-			<li><a href="login.jsp">食品記入</a></li>
-			<li><a href="login.jsp">料理詳細ページ</a></li>
-			<li><a href="login.jsp">必要な商品合計</a></li>
-
-			<!-- <li><a href="ManagementListpage.jsp">マネジメントリスト</a></li>
+			<li><a href="ManagementListpage.jsp">マネジメントリスト</a></li>
 			<li><a href="syohinsyosai.jsp">食品詳細</a></li>
 			<li><a href="syohinkinyupage.jsp">食品記入</a></li>
 			<li><a href="ryourisyousaipage.jsp">料理詳細ページ</a></li>
-			<li><a href="syouhingoukei.jsp">必要な商品合計</a></li> -->
+			<li><a href="syouhingoukei.jsp">必要な商品合計</a></li>
 		</ul>
 		<h2 class="title">FoodManagementSystem</h2>
 		<div class="rightNav">

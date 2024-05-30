@@ -47,10 +47,11 @@
 						}
 					%>
 					<div class="btn">
-						<a href="ryoriZairyoKinyu.jsp"><button type="button" name="cancel">キャンセル</button></a>
+						<a href="index.jsp"><button type="button" name="cancel">キャンセル</button></a>
 						<button type="submit" name="hozon">料理の材料保存</button>
 					</div>
 			</form>
+
 
 			<form action="<%=request.getContextPath()%>/remove" method="POST">
 				<div class="next">

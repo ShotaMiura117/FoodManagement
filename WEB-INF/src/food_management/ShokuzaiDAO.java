@@ -27,7 +27,7 @@ public class ShokuzaiDAO {
 		return DBManager.simpleUpdate(sql);
 	}
 
-	public static List<ShokuzaiBean> getShokuzaiList() throws SQLException {
+	public static List<ShokuzaiBean> getShokuzaiList(int choose_id) throws SQLException {
 
 		//		食材と単位、ジャンルを取り出す
 		String sql = "SELECT shokuzai.shokuzai_id, shokuzai.pk_id, shokuzai.materials_name, "
@@ -36,7 +36,8 @@ public class ShokuzaiDAO {
 				+ "shokuzai.volume, shokuzai.unit_id, shokuzai.default_volume, shokuzai.shokuzai_favorite,"
 				+ "genre.genre_name, unit.unit_name from shokuzai full join genre on shokuzai.genre_id = genre.genre_id"
 				+ " right outer join unit on shokuzai.unit_id = unit.unit_id"
-				+ " where shokuzai_id = 5";
+				+ " where shokuzai_id = '" + choose_id + "'";
+//		+ " where shokuzai_id = 5";
 
 		//		リストページと結合後、
 		//		where句をセッションから取得したshokuzai_idで指定する

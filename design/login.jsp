@@ -50,10 +50,7 @@
 	</form>
 	<div class="flex-container">
  		<a href="SignUp.jsp">新規アカウント登録</a>
-
-<!-- ↓ユーザー名被り確認（未実装） -->
-<%--   		<a href="<%=request.getContextPath()%>/createa">新規アカウント登録</a>
- --%> 	</div>
+ 	</div>
 
 
 	</main>

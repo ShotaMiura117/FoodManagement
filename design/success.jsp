@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=windows-31j"
 	pageEncoding="windows-31j"%>
 
-<% String url_name = "http://localhost:8080/FoodManagement/design/ManagementListpage.jsp"; %>
+<% String url_name = "http://localhost:8080/FoodManagement/design/main.jsp"; %>
 
 
 <!DOCTYPE html>

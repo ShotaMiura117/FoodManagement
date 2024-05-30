@@ -118,8 +118,8 @@ function checkForm() {
 						</tr>
 						<tr>
 							<th>数量</th>
-							<td><input type="number" name="volume" id="volume" max="5000000"
-								value="<%=session.getAttribute("volume")%>" min="1">
+							<td><input type="number" step="0.1" name="volume" id="volume" max="5000000"
+								value="<%=session.getAttribute("volume")%>" min="0.1">
 								<select name="unit_id" id="unit">
 									<option value="" selected disabled>選択必須</option>
 									<option value="1">g</option>
@@ -127,8 +127,8 @@ function checkForm() {
 									<option value="3">個</option>
 							</select>
 							×
-							<input type="number" name="quantity" id="quantity" max="5000000"
-								min="1" value="<%=session.getAttribute("quantity")%>">
+							<input type="number" step="0.1" name="quantity" id="quantity" max="5000000"
+								min="0.1" value="<%=session.getAttribute("quantity")%>">
 
 							</td>
 						</tr>
@@ -188,7 +188,8 @@ function checkForm() {
 					<br>
 					<div class="button">
 						<button type="button" class="b"
-							onclick="location.href='<%=request.getContextPath()%>/shokuzai'">
+							onclick="location.href='<%=request.getContextPath()%>/shokuzai'"
+							>
 							キャンセル</button>
 						<br> <br>
 						<button type="submit" class="btn"

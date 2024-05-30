@@ -101,12 +101,22 @@
                 </table>
                 <br>
                 <div class="button">
-                <a href="ManagementListpage.jsp">
-                <button type="button" class="b">キャンセル</button><br><br></a>
+
                 <button type="submit"  class="btn">保存</button>
                 </div>
                 </form>
-            </div>
+                </br>
+
+				<%-- <form action="<%=request.getContextPath()%>/ManagementList"
+					method="POST">
+				 --%>	<div class="button">
+					<a href="main.jsp">
+						<button type="submit" class="b" name="b">キャンセル</button></a>
+						<br>
+						<br>
+					</div>
+				</form>
+			</div>
         </div>
     </div>
 

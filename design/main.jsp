@@ -17,25 +17,29 @@
 <body>
 	<nav class="navbar">
 		<ul class="nav-list">
-			<li><a href="login.jsp">マネジメントリスト</a></li>
-			<li><a href="login.jsp">食品詳細</a></li>
-			<li><a href="login.jsp">食品記入</a></li>
-			<li><a href="login.jsp">料理詳細ページ</a></li>
-			<li><a href="login.jsp">必要な商品合計</a></li>
 
-			<!-- <li><a href="ManagementListpage.jsp">マネジメントリスト</a></li>
-			<li><a href="syohinsyosai.jsp">食品詳細</a></li>
+			<form action="<%=request.getContextPath()%>/ManagementList"
+				method="POST" name="list">
+				<input type="hidden" name="param" value="テスト">
+			</form>
+
+			<li><a href="<%=request.getContextPath()%>/ManagementList"
+				onclick="document.list.submit();return false;">マネジメントリスト</a></li>
+
 			<li><a href="syohinkinyupage.jsp">食品記入</a></li>
+
 			<li><a href="ryourisyousaipage.jsp">料理詳細ページ</a></li>
-			<li><a href="syouhingoukei.jsp">必要な商品合計</a></li> -->
+			<li><a href="ryoriZairyoKinyu.jsp">材料記入ページ</a></li>
 		</ul>
 		<h2 class="title">FoodManagementSystem</h2>
+				<form action="<%=request.getContextPath()%>/logout"
+					method="GET">
 		<div class="rightNav">
-			<a href="login.jsp">
-				<button class="btn btn-sm">ログイン</button>
-			</a>
-		</div>
-	</nav>
+
+						<button type="submit" class="btn btn-sm" name="logout">ログアウト</button>
+						</form>
+
+					</div></nav>
 	<div class="slideshow-container">
 		<div class="slider">
 			<img src="photos/momo.jpg" alt="Momo" style="width: 100%">

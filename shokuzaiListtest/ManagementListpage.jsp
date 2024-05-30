@@ -23,6 +23,7 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
                 <div class="logout">
                 			 <form action="<%=request.getContextPath() %>/logout">
             	<button type="submit"class="b">ログアウト</button></form>
+            	 <a href="<%=request.getContextPath() %>/design/main.jsp">マイページに戻る</a>
 
 		</div>
             <div class="hyoji"style="display:inline-flex">
@@ -66,7 +67,7 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
 					</td>
 					<td ><%if(sListbean.getOpen() == 1){out.print("済");}else{out.print("未");};%></td>
 					<td >
-					<form action="<%=request.getContextPath()%>/shokuzai_deteil">
+					<form action="<%=request.getContextPath()%>/shokuzai">
 					<button type="submit" class="btn btn-Link"name="deteil"value="<%=sListbean.getShokuzaiID()%>">
 					<%=sListbean.getName()%></button></form></td>
 					<td><%=sListbean.getVolume()%><%=sListbean.getUnit() %>/<%=sListbean.getDefaVolume()%>
@@ -98,6 +99,9 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
 					 <button type="submit" class="btn btn-outline-success" name="deletes"
 					 value="<%=sListbean.getShokuzaiID()%>">削除</button></form></td>
 					 </tr>
+
+
+
 <%
 }
 %>
