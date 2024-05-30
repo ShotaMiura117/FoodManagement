@@ -118,7 +118,14 @@
 	<servlet-name>sListS</servlet-name>
 	<url-pattern>/ManagementList</url-pattern>
 	</servlet-mapping>
-
+<servlet>
+	<servlet-name>sgetListS</servlet-name>
+	<servlet-class>food_management.ShokuzaiListgetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>sgetListS</servlet-name>
+	<url-pattern>/ManagementListget</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 	<servlet-name>deleteS</servlet-name>

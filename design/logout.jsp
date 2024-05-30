@@ -11,9 +11,15 @@ pageEncoding="UTF-8" session="true"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ログアウト</title>
+<style>
+h1 {
+	/*線の種類（実線） 太さ 色*/
+	border-bottom: solid 3px black;
+}
+</style>
 <body>
-ログアウトしました。<br><br>
+<h1>ログアウトしました。</h1>
 
-<a href="<%=request.getContextPath() %>/home.html">トップに戻る</a>
+<a href="<%=request.getContextPath() %>/design/login.jsp">トップに戻る</a>
 </body>
 </html>

@@ -21,12 +21,14 @@ integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUU
 	<div class="container">
 
                 <div class="logout">
-                			 <form action="<%=request.getContextPath() %>/logout">
+                            			 <form action="<%=request.getContextPath() %>/logout">
             	<button type="submit"class="b">ログアウト</button></form>
+            	 <a href="<%=request.getContextPath() %>/design/main.jsp">マイページに戻る</a>
+
 
 		</div>
             <div class="hyoji"style="display:inline-flex">
-                <form action="<%=request.getContextPath() %>/FoodList"method="Get"id="select">
+                <form action="<%=request.getContextPath() %>/FoodList"method="GET"id="select">
                 <button type="submit" class="btn btn-outline-primary" name="hyoji">選択した食品で料理を検索</button>
                 </form>
            <form action="<%=request.getContextPath() %>/design/syohinkinyupage.jsp"method="Post"id="tsuika">

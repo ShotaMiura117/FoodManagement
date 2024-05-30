@@ -19,7 +19,7 @@ public class FoodlistServlet extends HttpServlet{
 			throws ServletException,IOException{
 
 	String[] selectShokuzai =request.getParameterValues("selectShokuzai");
-		if(selectShokuzai==null|| selectShokuzai.length==0) {request.getRequestDispatcher("/ManagementList").forward(request, response);
+		if(selectShokuzai==null|| selectShokuzai.length==0) {request.getRequestDispatcher("/ManagementListget").forward(request, response);
 		return;
 		}
 		Connection con =null;

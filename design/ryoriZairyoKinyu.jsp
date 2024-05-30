@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=windows-31j">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ï¿½ï¿½ï¿½ï¿½ï¿½Ú×ƒyï¿½[ï¿½W</title>
+<title>—¿—Ú×ƒy[ƒW</title>
 <link rel="stylesheet" href="ryoriZairyoKinyu.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -20,25 +20,25 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="top_title">ï¿½ï¿½ï¿½ï¿½ï¿½ÌÞ—ï¿½ï¿½Lï¿½ï¿½ï¿½yï¿½[ï¿½W</h1>
+		<h1 class="top_title">—¿—‚ÌÞ—¿‹L“üƒy[ƒW</h1>
 		<div class="right_container">
 			<form action="<%=request.getContextPath()%>/ryori" method="POST">
 				<div class="name">
-					ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: <input type="text" name="name" Required> ï¿½ï¿½: <input
+					—¿—–¼:<input type="text" name="name" Required>•ª: <input
 						type="number" name="time" Required><br> <br>
 				</div>
 				<div id="ingredientContainer">
 					<div class="list">
-						ï¿½Hï¿½ï¿½: <input type="text" name="zairyo" Required> ï¿½ï¿½ ï¿½ï¿½: <input
+						HÞ: <input type="text" name="zairyo" Required> ”—Ê: <input
 							type="number" name="suryo" max="500000000" min="0" Required>
-						ï¿½Pï¿½ï¿½: <input type="number" name="tani" max="3" min="1" Required
+						’PˆÊ: <input type="number" name="tani" max="3" min="1" Required
 							style="font-size: smaller;">
 
 					</div>
 
 					<div class="btn">
-						<a href="index.jsp"><button type="button" name="cancel">ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½</button></a>
-						<button type="submit" name="hozon">ï¿½ï¿½ï¿½ï¿½ï¿½ÌÞ—ï¿½ï¿½Û‘ï¿½</button>
+						<a href="main.jsp"><button type="button" name="cancel">ƒLƒƒƒ“ƒZƒ‹</button></a>
+						<button type="submit" name="hozon">—¿—‚ÌÞ—¿•Û‘¶</button>
 
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 				<div class="next">
 					Name:<input type="text" name="name" required><br> <br>
 
-					<button type="submit">ï¿½íœ</button>
+					<button type="submit">íœ</button>
 				</div>
 			</form>
 
@@ -74,8 +74,8 @@
 
 				<TABLE BORDER="1">
 					<TR>
-						<TH>ï¿½Þ—ï¿½ï¿½ï¿½</TH>
-						<TH>ï¿½ï¿½ï¿½ï¿½</TH>
+						<TH>Þ—¿–¼</TH>
+						<TH>”—Ê</TH>
 					</TR>
 					<%
 						while (rs1.next()) {
@@ -118,7 +118,7 @@
 						style="width: 250px; height: 250px">
 				</div>-->
 				<div class="medium_box">
-					<!--<button id="rowAdder" type="button">ï¿½^ï¿½Oï¿½Ì’Ç‰ï¿½</button>-->
+					<!--<button id="rowAdder" type="button">ƒ^ƒO‚Ì’Ç‰Á</button>-->
 					<%
 						ResultSet rs = null;
 						Connection con = null;
