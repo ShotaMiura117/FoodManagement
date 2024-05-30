@@ -1,73 +1,111 @@
-<%@ page language="java" contentType="text/html; charset=windows-31j"
-	pageEncoding="windows-31j"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<%@page import="java.util.*" %>
+	<%@page import="java.sql.*" %>
+	<%@page import="food_management.*" %>
+	<%@page import="java.util.Date"%>
+	<%@page import="java.text.SimpleDateFormat" %>
+<!DOCTYPE html public "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=windows-31j">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ŠÇ—‚·‚éHÞƒŠƒXƒgƒy[ƒW</title>
-<link rel="stylesheet" href=" href="<%=request.getContextPath() %>//ManagementListpage.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<title>ç®¡ç†ã™ã‚‹é£Ÿæãƒªã‚¹ãƒˆãƒšãƒ¼ã‚¸</title>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/shokuzaiListtest/ManagementListpage.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://kit.fontaweso me.com/8ff098a16e.js"crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="search">
-			<form action="#">
-				<input type="text" placeholder="ŒŸõ‚µ‚Ä‚­‚¾‚³‚¢" name="search">
-				<button>
-					<i class="fa-solid fa-magnifying-glass" style="font-size: 14px;">ŒŸõ</i>
-				</button>
-			</form>
-			 <div class="logout">
-            	<button class="b">
-            	<a href="login.jsp">ƒƒOƒAƒEƒg</a></button>
-            </div>
-            <div class="hyoji">
-                <button type="button" class="btn btn-outline-primary" name="hyoji">‘I‘ð‚µ‚½¤•iÚ×‚ð•\Ž¦</button>
-                <button type="button" class="btn btn-outline-info" name="tsuika">H•i‚ð’Ç‰Á</button>
-            </div>
+
+                <div class="logout">
+                			 <form action="<%=request.getContextPath() %>/logout">
+            	<button type="submit"class="b">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</button></form>
+
 		</div>
+            <div class="hyoji"style="display:inline-flex">
+                <form action="<%=request.getContextPath() %>/FoodList"method="Get"id="select">
+                <button type="submit" class="btn btn-outline-primary" name="hyoji">é¸æŠžã—ãŸé£Ÿå“ã§æ–™ç†ã‚’æ¤œç´¢</button>
+                </form>
+           <form action="<%=request.getContextPath() %>/touroku"method="Post"id="tsuika">
+                <button type="submit" class="btn btn-outline-info"name="tsuika"id="tsuika">é£Ÿå“ã‚’è¿½åŠ </button></form>
+                            </div>
+
+
+
 		<div class="list">
-			<table>
-				<tr>
-					<th>ŠJ••</th>
-					<th>HÞ–¼</th>
-					<th>”—Ê</th>
-					<th>Ü–¡ŠúŒÀDÁ”ïŠúŒÀ</th>
-					<th>íœ</th>
+			<table  >
+				<tr >
+				<th ></th>
+				<th >ãŠæ°—ã«å…¥ã‚Š</th>
+					<th >é–‹å°</th>
+					<th >é£Ÿæå</th>
+					<th>æ•°é‡</th>
+					<th >ä¿ç®¡æ–¹æ³•</th>
+					<th >æœŸé™</th>
+					<th >ä½¿ç”¨é‡</th>
+
+					<th >å‰Šé™¤</th>
 				</tr>
+	<%
+
+	List<ShokuzaiListBean> shokuzaiListbean=
+	(List<ShokuzaiListBean>)request.getAttribute("shokuzaiList");
+
+
+	 for(int i=0; i<shokuzaiListbean.size();i++){
+			ShokuzaiListBean sListbean =shokuzaiListbean.get(i);
+%>
+
+
 				<tr>
-					<td>–¢</td>
-					<td>“Ø“÷</td>
-					<td>1</td>
-					<td>2024-05-02</td>
-					<td><input type="number" name="number" min="1" max="50">
-						<input type="checkbox"></td>
-					 <td><button type="button" class="btn btn-outline-success" name="kakutei">Šm’è</button></td>
-				</tr>
-				<tr>
-					<td>–¢</td>
-					<td>“Ø“÷</td>
-					<td>1</td>
-					<td>2024-05-02</td>
-					<td><input type="number" name="number" min="1" max="50">
-						<input type="checkbox"></td>
-					 <td><button type="button" class="btn btn-outline-success" name="kakutei">Šm’è</button></td>
-				</tr>
-				<tr>
-					<td>–¢</td>
-					<td>“Ø“÷</td>
-					<td>1</td>
-					<td>2024-05-02</td>
-					<td><input type="number" name="number" min="1" max="50">
-						<input type="checkbox"></td>
-					 <td><button type="button" class="btn btn-outline-success" name="kakutei">Šm’è</button></td>
-				</tr>
+					<td ><input type="checkbox"name="selectShokuzai"value="<%=sListbean.getName()%>"form="select"></td>
+					<td>
+					<b><%if(sListbean.getSFavorite() ==1){out.write("â˜…");}else{out.write("â˜†");};%></b>
+					</td>
+					<td ><%if(sListbean.getOpen() == 1){out.print("æ¸ˆ");}else{out.print("æœª");};%></td>
+					<td >
+					<form action="<%=request.getContextPath()%>/shokuzai"method="get">
+					<button type="submit" class="btn btn-Link"name="deteil"value="<%=sListbean.getShokuzaiID()%>">
+					<%=sListbean.getName()%></button></form></td>
+					<td><%=sListbean.getVolume()%><%=sListbean.getUnit() %>/<%=sListbean.getDefaVolume()%>
+					<%=sListbean.getUnit() %>Ã—<%=sListbean.getQuantity()%></td>
+					<td><%switch(sListbean.getSave()){
+					case 1 :out.write("å†·è”µåº«")
+					;break; case 2 :out.write("å†·å‡åº«")
+					;break; case 3 :out.write("é‡Žèœå®¤")
+					;break; case 4:out.write("å¸¸æ¸©")
+					;
+					}%></td>
+					<td ><%Date exception = sListbean.getExpiration();
+					if(exception !=null){
+			        Date calender =new Date();
+			        long diffInMillies=sListbean.getExpiration().getTime()-calender.getTime();
+			        long diffInDays=diffInMillies / (1000 * 60 * 60 * 24);
+			        String color=(diffInDays <=3)?"red":"black";
+			        out.println("<font color=\""+color+"\">");}%>
+			        <%if(exception ==null){out.println("");}else{out.print(sListbean.getExpiration());}%> </td>
+					<td ><form action= "<%=request.getContextPath()%>/usedvolume"method="POST">
+					<input type="hidden" name="devoSID"value="<%=sListbean.getShokuzaiID()%>">
+					<input type="number" name="devolume" min="0" max="<%=sListbean.getDefaVolume()*sListbean.getQuantity()%>deletes"
+					value="0"placeholder="0.01"step="0.1">
+					<%=sListbean.getUnit() %>
+
+					<input type="submit"value="ç¢ºå®š"></form></td>
+
+					 <td ><form action="<%=request.getContextPath() %>/deletes"method="POST">
+					 <button type="submit" class="btn btn-outline-success" name="deletes"
+					 value="<%=sListbean.getShokuzaiID()%>">å‰Šé™¤</button></form></td>
+					 </tr>
+<%
+}
+%>
+
 			</table>
 		</div>
-	</div>
+		</div>
 
 </body>
 </html>
